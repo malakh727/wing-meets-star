@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+export async function getStaticPaths() {
+  const notes = await getCollection("notes");
+  return notes
+    .filter((n) => n.id.startsWith("en/") && !n.data.draft)
+    .map((n) => ({
+      params: { slug: n.id.slice(3) },
+      props: { note: n },
+    }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+---
+
+<BlogLayout
+  title={note.data.title}
+  description={note.data.description}
+  date={note.data.date}
+  lang="en"
+>
+  <Content />
+</BlogLayout>

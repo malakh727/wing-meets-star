@@ -1,5 +1,11 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const essays = await getCollection("essays");
+const posts = essays
+  .filter((e) => e.id.startsWith("en/") && !e.data.draft)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <BaseLayout title="Blog" description="Long-form essays on engineering, craft, and curiosity.">
@@ -8,22 +14,67 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <p class="font-label text-xs text-primary uppercase tracking-widest mb-3">Essays</p>
       <h1
         class="font-display font-semibold text-on-surface"
-        style="font-size: 2.5rem; letter-spacing: -0.02em;"
+        style="font-size: 3rem; letter-spacing: -0.02em;"
       >
         Blog
       </h1>
-      <p class="font-body text-base text-on-surface-muted mt-4 leading-relaxed max-w-lg">
-        Long-form thinking on engineering, craft, and curiosity. Ideas that took time to form.
+      <p class="font-body text-lg text-on-surface-muted mt-4 leading-relaxed max-w-lg">
+        Long-form thinking on engineering, craft, and curiosity.
       </p>
     </header>
 
-    <!-- Placeholder — posts will come in Phase 3 -->
-    <div class="space-y-px">
-      <div class="py-12 text-center">
-        <span class="font-label text-sm text-on-surface-muted" style="letter-spacing: 0.05em;">
+    {
+      posts.length === 0 ? (
+        <p class="font-label text-sm text-on-surface-muted text-center py-12">
           No posts yet — check back soon.
-        </span>
-      </div>
-    </div>
+        </p>
+      ) : (
+        <ol class="space-y-px">
+          {posts.map((post) => {
+            const slug = post.id.slice(3);
+            const date = new Date(post.data.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            });
+            return (
+              <li>
+                <a
+                  href={`/blog/${slug}`}
+                  class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-5 transition-colors duration-200"
+                  style="border-bottom: 1px solid rgba(66,71,84,0.12);"
+                >
+                  <time class="font-label text-sm text-on-surface-muted shrink-0 mt-1 sm:w-36">
+                    {date}
+                  </time>
+                  <div class="flex-1">
+                    <h2 class="font-body text-xl text-on-surface group-hover:text-primary transition-colors duration-200 leading-snug">
+                      {post.data.title}
+                    </h2>
+                    {post.data.description && (
+                      <p class="font-body text-base text-on-surface-muted mt-1 leading-relaxed">
+                        {post.data.description}
+                      </p>
+                    )}
+                    {post.data.tags && (
+                      <div class="flex flex-wrap gap-2 mt-2">
+                        {post.data.tags.map((tag) => (
+                          <span
+                            class="font-label text-xs text-on-surface-muted px-2 py-0.5 rounded"
+                            style="background-color: #2A2A2A;"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </a>
+              </li>
+            );
+          })}
+        </ol>
+      )
+    }
   </div>
 </BaseLayout>

@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from "astro:content";
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+
+export async function getStaticPaths() {
+  const stories = await getCollection("stars");
+  return stories
+    .filter((s) => s.id.startsWith("ar/") && !s.data.draft)
+    .map((s) => ({
+      params: { slug: s.id.slice(3) },
+      props: { story: s },
+    }));
+}
+
+const { story } = Astro.props;
+const { Content } = await render(story);
+---
+
+<BlogLayout
+  title={story.data.title}
+  description={story.data.description}
+  date={story.data.date}
+  lang="ar"
+>
+  <Content />
+</BlogLayout>

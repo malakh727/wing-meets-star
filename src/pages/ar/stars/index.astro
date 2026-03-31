@@ -1,26 +1,69 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const stories = await getCollection("stars");
+const posts = stories
+  .filter((s) => s.id.startsWith("ar/") && !s.data.draft)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <BaseLayout title="النجوم" lang="ar">
   <div class="max-w-3xl mx-auto px-6 py-20">
     <header class="mb-16">
       <p class="font-label text-xs text-tertiary uppercase tracking-widest mb-3">كوكبة</p>
-      <h1 class="font-display font-semibold text-on-surface" style="font-size: 2.5rem; letter-spacing: -0.01em;">
+      <h1
+        class="font-display font-semibold text-on-surface"
+        style="font-size: 3rem; letter-spacing: -0.01em;"
+      >
         قصص النجوم
       </h1>
-      <p class="font-body text-base text-on-surface-muted mt-4 leading-relaxed max-w-lg">
-        قصص إبداعية تحملها النجوم. خريطة النجوم التفاعلية قادمة.
+      <p class="font-body text-lg text-on-surface-muted mt-4 leading-relaxed max-w-lg">
+        قصص قصيرة في المساحة بين ما نعرفه وما نشعر به.
       </p>
     </header>
 
-    <div class="relative w-full h-64 rounded flex items-center justify-center overflow-hidden" style="background-color: #1C1B1B;">
-      <div class="relative text-center space-y-2">
-        <span class="text-4xl" style="color: #E9C176;">✦</span>
-        <p class="font-label text-xs text-on-surface-muted" style="letter-spacing: 0.08em;">
-          خريطة النجوم التفاعلية — قريباً
+    {
+      posts.length === 0 ? (
+        <p class="font-label text-sm text-on-surface-muted text-center py-12">
+          لا توجد قصص بعد — السماء تُرسم.
         </p>
-      </div>
-    </div>
+      ) : (
+        <ol class="space-y-px">
+          {posts.map((story) => {
+            const slug = story.id.slice(3);
+            const date = new Date(story.data.date).toLocaleDateString("ar-SA", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            });
+            return (
+              <li>
+                <a
+                  href={`/ar/stars/${slug}`}
+                  class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-5 transition-colors duration-200"
+                  style="border-bottom: 1px solid rgba(66,71,84,0.12);"
+                >
+                  <time class="font-label text-sm text-on-surface-muted shrink-0 mt-1 sm:w-40">
+                    {date}
+                  </time>
+                  <div class="flex-1">
+                    <h2 class="font-body text-xl text-on-surface group-hover:text-tertiary transition-colors duration-200 leading-snug">
+                      {story.data.title}
+                    </h2>
+                    {story.data.description && (
+                      <p class="font-body text-base text-on-surface-muted mt-1 leading-relaxed">
+                        {story.data.description}
+                      </p>
+                    )}
+                  </div>
+                  <span class="text-tertiary opacity-40 group-hover:opacity-80 transition-opacity text-sm">✦</span>
+                </a>
+              </li>
+            );
+          })}
+        </ol>
+      )
+    }
   </div>
 </BaseLayout>

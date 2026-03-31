@@ -1,21 +1,68 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const essays = await getCollection("essays");
+const posts = essays
+  .filter((e) => e.id.startsWith("ar/") && !e.data.draft)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <BaseLayout title="المقالات" lang="ar">
   <div class="max-w-3xl mx-auto px-6 py-20">
     <header class="mb-16">
       <p class="font-label text-xs text-primary uppercase tracking-widest mb-3">مقالات</p>
-      <h1 class="font-display font-semibold text-on-surface" style="font-size: 2.5rem; letter-spacing: -0.01em;">
+      <h1
+        class="font-display font-semibold text-on-surface"
+        style="font-size: 3rem; letter-spacing: -0.01em;"
+      >
         المدونة
       </h1>
-      <p class="font-body text-base text-on-surface-muted mt-4 leading-relaxed max-w-lg">
-        أفكار مطوّلة في الهندسة والكتابة والفضول. أفكار أخذت وقتها في التشكّل.
+      <p class="font-body text-lg text-on-surface-muted mt-4 leading-relaxed max-w-lg">
+        أفكار مطوّلة في الهندسة والكتابة والفضول.
       </p>
     </header>
 
-    <div class="py-12 text-center">
-      <span class="font-label text-sm text-on-surface-muted">لا توجد مقالات بعد — عد قريباً.</span>
-    </div>
+    {
+      posts.length === 0 ? (
+        <p class="font-label text-sm text-on-surface-muted text-center py-12">
+          لا توجد مقالات بعد — عد قريباً.
+        </p>
+      ) : (
+        <ol class="space-y-px">
+          {posts.map((post) => {
+            const slug = post.id.slice(3);
+            const date = new Date(post.data.date).toLocaleDateString("ar-SA", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            });
+            return (
+              <li>
+                <a
+                  href={`/ar/blog/${slug}`}
+                  class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-5 transition-colors duration-200"
+                  style="border-bottom: 1px solid rgba(66,71,84,0.12);"
+                >
+                  <time class="font-label text-sm text-on-surface-muted shrink-0 mt-1 sm:w-40">
+                    {date}
+                  </time>
+                  <div class="flex-1">
+                    <h2 class="font-body text-xl text-on-surface group-hover:text-primary transition-colors duration-200 leading-snug">
+                      {post.data.title}
+                    </h2>
+                    {post.data.description && (
+                      <p class="font-body text-base text-on-surface-muted mt-1 leading-relaxed">
+                        {post.data.description}
+                      </p>
+                    )}
+                  </div>
+                </a>
+              </li>
+            );
+          })}
+        </ol>
+      )
+    }
   </div>
 </BaseLayout>

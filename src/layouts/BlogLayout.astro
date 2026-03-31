@@ -20,8 +20,8 @@ const formattedDate = date
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
-  <article class="max-w-2xl mx-auto px-6 py-16">
-    <header class="mb-12">
+  <article class="max-w-3xl mx-auto px-6 py-20">
+    <header class="mb-14">
       {
         formattedDate && (
           <time class="font-label text-sm text-on-surface-muted tracking-wider uppercase">
@@ -30,21 +30,21 @@ const formattedDate = date
         )
       }
       <h1
-        class="font-display text-4xl font-semibold tracking-tight text-on-surface mt-3 leading-tight"
+        class="font-display text-5xl font-semibold tracking-tight text-on-surface mt-4 leading-tight"
         style="letter-spacing: -0.02em;"
       >
         {title}
       </h1>
       {
         description && (
-          <p class="font-body text-lg text-on-surface-muted mt-4 leading-relaxed">
+          <p class="font-body text-xl text-on-surface-muted mt-5 leading-relaxed">
             {description}
           </p>
         )
       }
     </header>
 
-    <div class="font-body text-base text-on-surface leading-relaxed prose-content">
+    <div class="prose">
       <slot />
     </div>
   </article>
