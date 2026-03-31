@@ -1,5 +1,40 @@
 @import "tailwindcss";
 
-body {
-    font-family: system-ui, sans-serif;
+@theme {
+  /* Surface hierarchy */
+  --color-surface: #131313;
+  --color-surface-low: #1C1B1B;
+  --color-surface-high: #2A2A2A;
+  --color-surface-highest: #353534;
+
+  /* Brand */
+  --color-primary: #adc6ff;
+  --color-primary-container: #4D8EFF;
+  --color-secondary: #b9c8de;
+  --color-tertiary: #E9C176;
+
+  /* Text */
+  --color-on-surface: #E5E2E1;
+  --color-on-surface-muted: #9A9796;
+
+  /* Utility */
+  --color-outline-variant: #424754;
+  --color-error-container: #93000A;
+
+  /* Typography */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Newsreader", serif;
+  --font-label: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    background-color: #131313;
+    color: #E5E2E1;
+    font-family: "Newsreader", serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
 }

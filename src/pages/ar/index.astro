@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="الرئيسية" lang="ar">
+  <!-- Hero -->
+  <section class="relative min-h-[80vh] flex items-center overflow-hidden">
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="
+        background-image:
+          linear-gradient(rgba(66,71,84,0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(66,71,84,0.05) 1px, transparent 1px);
+        background-size: 24px 24px;
+      "
+    ></div>
+
+    <div
+      class="absolute top-1/3 right-1/4 w-96 h-96 rounded-full pointer-events-none"
+      style="background: radial-gradient(circle, rgba(173,198,255,0.04) 0%, transparent 70%);"
+    ></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 py-24 w-full">
+      <div class="grid md:grid-cols-5 gap-12 items-center">
+        <!-- Right text (RTL: displayed on right) -->
+        <div class="md:col-span-3 space-y-6">
+          <p class="font-label text-xs text-primary uppercase tracking-widest">
+            حديقة المعرفة
+          </p>
+
+          <h1
+            class="font-display font-semibold text-on-surface leading-tight"
+            style="font-size: 3.5rem; letter-spacing: -0.01em; line-height: 1.2;"
+          >
+            حيث يلتقي الجناح<br />
+            <span style="color: #E9C176;">بالنجمة.</span>
+          </h1>
+
+          <p class="font-body text-lg text-on-surface-muted leading-relaxed max-w-md">
+            مكان تنمو فيه الأفكار، وتتواصل المعرفة كالنجوم، ويلتقي الهندسة بالفضول.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a
+              href="/ar/blog"
+              class="font-label text-sm uppercase tracking-wider px-5 py-2.5 rounded text-surface font-medium"
+              style="background: linear-gradient(135deg, #adc6ff, #4D8EFF); letter-spacing: 0.03em;"
+            >
+              المقالات
+            </a>
+            <a
+              href="/ar/garden"
+              class="font-label text-sm px-5 py-2.5 rounded text-on-surface font-medium"
+              style="background-color: #2A2A2A; outline: 1px solid rgba(66,71,84,0.15);"
+            >
+              الحديقة
+            </a>
+          </div>
+        </div>
+
+        <!-- Decorative side -->
+        <div class="md:col-span-2 hidden md:flex items-center justify-center">
+          <div class="relative w-64 h-64">
+            <div class="absolute inset-0 rounded-full" style="border: 1px solid rgba(173,198,255,0.08);"></div>
+            <div class="absolute inset-8 rounded-full" style="border: 1px solid rgba(173,198,255,0.06);"></div>
+            <div class="absolute inset-16 rounded-full" style="border: 1px solid rgba(173,198,255,0.1);"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span style="font-size: 2rem; color: #E9C176; opacity: 0.8;">✦</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

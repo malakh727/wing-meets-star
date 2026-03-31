@@ -1,0 +1,51 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  date?: string;
+  lang?: "en" | "ar";
+}
+
+const { title, description, date, lang = "en" } = Astro.props;
+
+const formattedDate = date
+  ? new Date(date).toLocaleDateString(lang === "ar" ? "ar-SA" : "en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : null;
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <article class="max-w-2xl mx-auto px-6 py-16">
+    <header class="mb-12">
+      {
+        formattedDate && (
+          <time class="font-label text-sm text-on-surface-muted tracking-wider uppercase">
+            {formattedDate}
+          </time>
+        )
+      }
+      <h1
+        class="font-display text-4xl font-semibold tracking-tight text-on-surface mt-3 leading-tight"
+        style="letter-spacing: -0.02em;"
+      >
+        {title}
+      </h1>
+      {
+        description && (
+          <p class="font-body text-lg text-on-surface-muted mt-4 leading-relaxed">
+            {description}
+          </p>
+        )
+      }
+    </header>
+
+    <div class="font-body text-base text-on-surface leading-relaxed prose-content">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

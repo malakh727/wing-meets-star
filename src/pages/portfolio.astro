@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Portfolio" description="Projects, skills, and professional experience.">
+  <div class="max-w-4xl mx-auto px-6 py-20">
+    <header class="mb-16">
+      <p class="font-label text-xs text-primary uppercase tracking-widest mb-3">Work</p>
+      <h1
+        class="font-display font-semibold text-on-surface"
+        style="font-size: 2.5rem; letter-spacing: -0.02em;"
+      >
+        Portfolio
+      </h1>
+      <p class="font-body text-base text-on-surface-muted mt-4 leading-relaxed max-w-lg">
+        A collection of projects and experiences. Built with curiosity and care.
+      </p>
+    </header>
+
+    <!-- Projects placeholder -->
+    <section class="mb-16">
+      <h2
+        class="font-label text-xs text-on-surface-muted uppercase tracking-widest mb-8"
+      >
+        Projects
+      </h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {
+          [1, 2].map(() => (
+            <div class="p-6 rounded bg-surface-low">
+              <div class="h-4 w-32 rounded bg-surface-high mb-3" />
+              <div class="h-3 w-full rounded bg-surface-high mb-2 opacity-60" />
+              <div class="h-3 w-3/4 rounded bg-surface-high opacity-40" />
+            </div>
+          ))
+        }
+      </div>
+      <p class="font-label text-xs text-on-surface-muted mt-6 text-center" style="letter-spacing: 0.05em;">
+        Projects coming soon.
+      </p>
+    </section>
+
+    <!-- Skills placeholder -->
+    <section>
+      <h2
+        class="font-label text-xs text-on-surface-muted uppercase tracking-widest mb-8"
+      >
+        Skills
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {
+          ["Engineering", "Design", "Writing", "Curiosity"].map((skill) => (
+            <span
+              class="font-label text-xs text-on-surface-muted px-3 py-1.5 rounded"
+              style="background-color: #2A2A2A; letter-spacing: 0.04em;"
+            >
+              {skill}
+            </span>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About" description="A brief introduction to the mind behind Wing Meet Star.">
+  <div class="max-w-2xl mx-auto px-6 py-20">
+    <header class="mb-12">
+      <p class="font-label text-xs text-primary uppercase tracking-widest mb-3">About</p>
+      <h1
+        class="font-display font-semibold text-on-surface"
+        style="font-size: 2.5rem; letter-spacing: -0.02em;"
+      >
+        Hello.
+      </h1>
+    </header>
+
+    <div class="space-y-6 font-body text-base text-on-surface leading-relaxed">
+      <p>
+        This is a space where wings meet stars — a personal knowledge garden that grows over time.
+      </p>
+      <p>
+        Here you'll find long-form essays, short notes, creative star stories, and a portfolio of work.
+        It's never finished; it only evolves.
+      </p>
+      <p class="text-on-surface-muted">
+        More to come.
+      </p>
+    </div>
+
+    <div class="mt-12 pt-8" style="border-top: 1px solid rgba(66,71,84,0.15);">
+      <p class="font-label text-xs text-on-surface-muted" style="letter-spacing: 0.05em;">
+        Built with Astro · TailwindCSS · curiosity
+      </p>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+interface Props {
+  lang?: "en" | "ar";
+}
+
+const { lang = "en" } = Astro.props;
+
+// Swap to the other language's equivalent path
+const currentPath = Astro.url.pathname;
+
+let otherLangHref: string;
+if (lang === "ar") {
+  // Strip /ar prefix to get English path
+  otherLangHref = currentPath.replace(/^\/ar/, "") || "/";
+} else {
+  // Add /ar prefix
+  otherLangHref = "/ar" + (currentPath === "/" ? "" : currentPath);
+}
+---
+
+<a
+  href={otherLangHref}
+  class="font-label text-xs text-on-surface-muted hover:text-primary transition-colors duration-200 border border-outline-variant/30 rounded px-2 py-1"
+  title={lang === "ar" ? "Switch to English" : "التبديل إلى العربية"}
+>
+  {lang === "ar" ? "EN" : "ع"}
+</a>

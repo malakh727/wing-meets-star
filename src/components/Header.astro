@@ -1,0 +1,108 @@
+---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+interface Props {
+  lang?: "en" | "ar";
+}
+
+const { lang = "en" } = Astro.props;
+
+const base = lang === "ar" ? "/ar" : "";
+
+const navLinks = [
+  { href: `${base}/`, label: lang === "ar" ? "الرئيسية" : "Home" },
+  { href: `${base}/blog`, label: lang === "ar" ? "المقالات" : "Blog" },
+  { href: `${base}/garden`, label: lang === "ar" ? "الحديقة" : "Garden" },
+  { href: `${base}/stars`, label: lang === "ar" ? "النجوم" : "Stars" },
+  { href: `${base}/portfolio`, label: lang === "ar" ? "الأعمال" : "Portfolio" },
+  { href: `${base}/about`, label: lang === "ar" ? "عني" : "About" },
+];
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b-0">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a
+      href={lang === "ar" ? "/ar/" : "/"}
+      class="font-display font-semibold text-lg text-on-surface hover:text-primary transition-colors duration-200"
+      style="letter-spacing: -0.02em;"
+    >
+      ✦ Wing Meet Star
+    </a>
+
+    <!-- Nav links -->
+    <div class="hidden md:flex items-center gap-8">
+      {
+        navLinks.map(({ href, label }) => {
+          const normalizedHref = href.replace(/\/$/, "") || "/";
+          const isActive = pathname === normalizedHref;
+          return (
+            <a
+              href={href}
+              class={`font-label text-sm transition-colors duration-200 ${
+                isActive
+                  ? "text-primary"
+                  : "text-on-surface-muted hover:text-on-surface"
+              }`}
+            >
+              {label}
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <!-- Right side: lang switcher + mobile menu placeholder -->
+    <div class="flex items-center gap-4">
+      <LanguageSwitcher lang={lang} />
+
+      <!-- Mobile menu button -->
+      <button
+        class="md:hidden text-on-surface-muted hover:text-on-surface transition-colors"
+        aria-label="Toggle menu"
+        id="mobile-menu-btn"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <rect y="3" width="20" height="1.5" rx="1"/>
+          <rect y="9.25" width="20" height="1.5" rx="1"/>
+          <rect y="15.5" width="20" height="1.5" rx="1"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-surface-low border-t border-outline-variant/15 px-6 py-4"
+  >
+    <div class="flex flex-col gap-4">
+      {
+        navLinks.map(({ href, label }) => {
+          const normalizedHref = href.replace(/\/$/, "") || "/";
+          const isActive = pathname === normalizedHref;
+          return (
+            <a
+              href={href}
+              class={`font-label text-sm transition-colors duration-200 ${
+                isActive ? "text-primary" : "text-on-surface-muted"
+              }`}
+            >
+              {label}
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>

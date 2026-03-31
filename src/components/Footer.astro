@@ -1,0 +1,42 @@
+---
+interface Props {
+  lang?: "en" | "ar";
+}
+
+const { lang = "en" } = Astro.props;
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-surface-low mt-auto">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+    <span class="font-display text-sm text-on-surface-muted" style="letter-spacing: -0.01em;">
+      ✦ Wing Meet Star
+    </span>
+
+    <div class="flex items-center gap-6">
+      <a
+        href={lang === "ar" ? "/ar/blog" : "/blog"}
+        class="font-label text-xs text-on-surface-muted hover:text-on-surface transition-colors"
+      >
+        {lang === "ar" ? "المقالات" : "Blog"}
+      </a>
+      <a
+        href={lang === "ar" ? "/ar/garden" : "/garden"}
+        class="font-label text-xs text-on-surface-muted hover:text-on-surface transition-colors"
+      >
+        {lang === "ar" ? "الحديقة" : "Garden"}
+      </a>
+      <a
+        href={lang === "ar" ? "/ar/stars" : "/stars"}
+        class="font-label text-xs text-on-surface-muted hover:text-on-surface transition-colors"
+      >
+        {lang === "ar" ? "النجوم" : "Stars"}
+      </a>
+    </div>
+
+    <span class="font-label text-xs text-on-surface-muted">
+      © {year}
+    </span>
+  </div>
+</footer>
