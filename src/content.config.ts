@@ -22,6 +22,9 @@ const starSchema = z.object({
   description: z.string().optional(),
   date: z.string(),
   draft: z.boolean().optional().default(false),
+  // Map coordinates in SVG viewBox space (0–160 × 0–90)
+  x: z.number().optional(),
+  y: z.number().optional(),
 });
 
 export const collections = {

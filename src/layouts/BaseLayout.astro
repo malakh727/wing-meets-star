@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import StarField from "../components/StarField.astro";
 
 interface Props {
   title: string;
@@ -42,11 +43,17 @@ const dir = lang === "ar" ? "rtl" : "ltr";
     <meta name="apple-mobile-web-app-title" content="WingMeetStar" />
     <link rel="manifest" href="/favicons/site.webmanifest" />
   </head>
-  <body class="min-h-screen flex flex-col bg-surface text-on-surface">
-    <Header lang={lang} />
-    <main class="flex-1">
-      <slot />
-    </main>
-    <Footer lang={lang} />
+  <body class="bg-surface text-on-surface">
+    <!-- Starfield renders first — DOM order ensures content is painted on top -->
+    <StarField />
+
+    <!-- Isolation creates a new stacking context above the canvas -->
+    <div class="relative flex flex-col min-h-screen" style="isolation: isolate;">
+      <Header lang={lang} />
+      <main class="flex-1 page-content">
+        <slot />
+      </main>
+      <Footer lang={lang} />
+    </div>
   </body>
 </html>

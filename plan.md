@@ -148,7 +148,7 @@ Pages:
 
 ---
 
-## 🔹 Phase 7 — Knowledge Garden
+## 🔹 Phase 7 — Knowledge Garden <<---
 
 - Categories
 - Internal linking

@@ -29,7 +29,7 @@ const posts = notes
           The garden is being planted — come back soon.
         </p>
       ) : (
-        <ol class="space-y-px">
+        <ol class="space-y-1">
           {posts.map((note) => {
             const slug = note.id.slice(3);
             const date = new Date(note.data.date).toLocaleDateString("en-US", {
@@ -41,8 +41,7 @@ const posts = notes
               <li>
                 <a
                   href={`/garden/${slug}`}
-                  class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-5 transition-colors duration-200"
-                  style="border-bottom: 1px solid rgba(66,71,84,0.12);"
+                  class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-5 px-4 -mx-4 rounded transition-colors duration-200 hover:bg-surface-low card-glow"
                 >
                   <time class="font-label text-sm text-on-surface-muted shrink-0 mt-1 sm:w-36">
                     {date}

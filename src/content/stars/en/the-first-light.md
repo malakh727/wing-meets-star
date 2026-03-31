@@ -3,6 +3,8 @@ title: "The First Light"
 description: "Before there were names for stars, there was only the act of looking up."
 date: "2025-03-01"
 draft: false
+x: 30
+y: 22
 ---
 
 Before there were names for stars, there was only the act of looking up.
