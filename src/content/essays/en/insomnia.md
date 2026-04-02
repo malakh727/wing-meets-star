@@ -3,7 +3,7 @@ title: "Insomnia"
 description: "Your thoughts do at 3am what children do on a playground at 3pm."
 date: "2025-07-12"
 tags: ["insomnia", "reflection", "night", "existence"]
-draft: true
+draft: false
 ---
 
 ## 3pm
@@ -22,7 +22,7 @@ There's no way to outrun a thought at 3am. You just have to let it go where it's
 
 Eventually exhaustion wins the argument. Your eyes close not because you decided to sleep but because the machinery gave out. The thoughts get sealed inside and turn into dreams — vivid, too-real, the kind that make you reach for something when you wake up and find your hand empty.
 
-Morning comes in pieces. A bird. Then more birds. Water on your face. Someone saying *good morning* in a voice that doesn't know what the night was like.
+Morning comes in pieces. A bird. Then more birds. Water on your face. Someone saying _good morning_ in a voice that doesn't know what the night was like.
 
 ---
 
@@ -32,14 +32,14 @@ The day ends. It always ends.
 
 ---
 
-Last night's insomnia lit something in you that hasn't gone out yet. Every sense turned up too high. The dark reminds you of old sadness. The quiet reminds you of how often you are alone with yourself. The boredom doesn't remind you of anything — it *is* the thing, the actual texture of what you're inside.
+Last night's insomnia lit something in you that hasn't gone out yet. Every sense turned up too high. The dark reminds you of old sadness. The quiet reminds you of how often you are alone with yourself. The boredom doesn't remind you of anything — it _is_ the thing, the actual texture of what you're inside.
 
 And then the questions come, the ones that only arrive when you're too tired to fend them off:
 
-*Why am I here?*
+_Why am I here?_
 
-*Does it matter that I was?*
+_Does it matter that I was?_
 
-*Is there a difference between existing and performing existence?*
+_Is there a difference between existing and performing existence?_
 
 No answers at 3am. Just the questions, and the ceiling, and the distant sound of the world going on without waiting for you to figure it out.

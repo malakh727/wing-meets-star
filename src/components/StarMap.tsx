@@ -11,6 +11,7 @@ export interface StarData {
 
 interface Props {
   stars: StarData[];
+  lang?: "en" | "ar";
 }
 
 /** Connect each star to its two nearest neighbours (deduped). */
@@ -40,7 +41,8 @@ function computeConnections(stars: StarData[]): [number, number][] {
   return result;
 }
 
-export default function StarMap({ stars }: Props) {
+export default function StarMap({ stars, lang = "en" }: Props) {
+  const isRTL = lang === "ar";
   const [hovered, setHovered] = useState<string | null>(null);
   const connections = useMemo(() => computeConnections(stars), [stars]);
 
@@ -184,13 +186,17 @@ export default function StarMap({ stars }: Props) {
             >
               <p
                 style={{
-                  fontFamily: '"Space Grotesk", sans-serif',
+                  fontFamily: isRTL
+                    ? '"Segoe UI", Tahoma, Arial, sans-serif'
+                    : '"Space Grotesk", sans-serif',
                   fontSize: "0.9rem",
                   fontWeight: 600,
                   color: "#E9C176",
-                  letterSpacing: "-0.01em",
+                  letterSpacing: isRTL ? "0" : "-0.01em",
                   margin: 0,
                   lineHeight: 1.3,
+                  direction: "rtl",
+                  textAlign: isRTL ? "right" : "left",
                 }}
               >
                 {star.title}
@@ -198,12 +204,16 @@ export default function StarMap({ stars }: Props) {
               {star.description && (
                 <p
                   style={{
-                    fontFamily: '"Newsreader", serif',
+                    fontFamily: isRTL
+                      ? '"Segoe UI", Tahoma, Arial, sans-serif'
+                      : '"Newsreader", serif',
                     fontSize: "0.8125rem",
                     color: "#9A9796",
                     marginTop: "5px",
                     lineHeight: 1.55,
                     marginBottom: 0,
+                    direction: isRTL ? "rtl" : "ltr",
+                    textAlign: isRTL ? "right" : "left",
                   }}
                 >
                   {star.description}
@@ -215,12 +225,13 @@ export default function StarMap({ stars }: Props) {
                   fontSize: "0.68rem",
                   color: "rgba(173,198,255,0.55)",
                   marginTop: "8px",
-                  letterSpacing: "0.06em",
+                  letterSpacing: isRTL ? "0" : "0.06em",
                   textTransform: "uppercase",
                   marginBottom: 0,
+                  direction: isRTL ? "rtl" : "ltr",
                 }}
               >
-                Click to read →
+                {isRTL ? "← اضغط للقراءة" : "Click to read →"}
               </p>
             </div>
           </div>
@@ -238,7 +249,9 @@ export default function StarMap({ stars }: Props) {
           textTransform: "uppercase",
         }}
       >
-        {stars.length} {stars.length === 1 ? "story" : "stories"} mapped
+        {isRTL
+          ? `${stars.length} ${stars.length === 1 ? "قصة" : "قصص"} مرسومة`
+          : `${stars.length} ${stars.length === 1 ? "story" : "stories"} mapped`}
       </div>
     </div>
   );

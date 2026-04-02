@@ -1,11 +1,24 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import StarMap from "../../../components/StarMap.tsx";
+import type { StarData } from "../../../components/StarMap.tsx";
 
 const stories = await getCollection("stars");
 const posts = stories
   .filter((s) => s.id.startsWith("ar/") && !s.data.draft)
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const mappedStars: StarData[] = posts
+  .filter((s) => s.data.x != null && s.data.y != null)
+  .map((s) => ({
+    slug: s.id.slice(3),
+    title: s.data.title,
+    description: s.data.description,
+    x: s.data.x!,
+    y: s.data.y!,
+    href: `/ar/stars/${s.id.slice(3)}`,
+  }));
 ---
 
 <BaseLayout title="النجوم" lang="ar">
@@ -22,6 +35,14 @@ const posts = stories
         قصص قصيرة في المساحة بين ما نعرفه وما نشعر به.
       </p>
     </header>
+
+    {
+      mappedStars.length > 0 && (
+        <div class="mb-16">
+          <StarMap client:load stars={mappedStars} lang="ar" />
+        </div>
+      )
+    }
 
     {
       posts.length === 0 ? (

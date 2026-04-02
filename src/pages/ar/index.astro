@@ -33,7 +33,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             style="font-size: 3.5rem; letter-spacing: -0.01em; line-height: 1.2;"
           >
             حيث يلتقي الجناح<br />
-            <span style="color: #E9C176;">بالنجمة.</span>
+            <span style="color: #E9C176;">بالنجمة.</span><img
+              src="/assets/wing-meet-star-logo-removebg.png"
+              alt="Wing Meets Star logo"
+              style="display: inline-block; height: 1.5em; vertical-align: middle; margin-right: 0.1em; animation: logoFloat 1.8s ease-in-out infinite;"
+            />
           </h1>
 
           <p class="font-body text-lg text-on-surface-muted leading-relaxed max-w-md">
@@ -73,3 +77,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  @keyframes logoFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+    50% { transform: translateY(-6px) rotate(3deg); opacity: 1; }
+  }
+</style>
