@@ -1,7 +1,7 @@
 ---
 title: "How Does a Computer Work?"
 description: "A computer has four basic operations — and understanding them is where everything begins."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["computers", "technology", "computing"]
 draft: false
 ---

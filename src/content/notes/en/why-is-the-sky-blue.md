@@ -1,7 +1,7 @@
 ---
 title: "Why Is the Sky Blue?"
 description: "White light is many colors — and wavelength decides which ones reach your eyes."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["physics", "astronomy", "light"]
 draft: false
 ---

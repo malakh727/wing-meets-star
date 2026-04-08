@@ -1,7 +1,7 @@
 ---
 title: "The War of Currents"
 description: "A scientific war of another kind — Edison versus Tesla and Westinghouse over the future of electricity."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["history of science", "electricity", "engineering"]
 draft: false
 ---

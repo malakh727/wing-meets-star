@@ -1,7 +1,7 @@
 ---
 title: "What Are Quantum Computers?"
 description: "A qubit can be zero and one at the same time — and that changes everything."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["physics", "quantum computing", "technology"]
 draft: false
 ---

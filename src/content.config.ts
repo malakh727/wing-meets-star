@@ -1,6 +1,76 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
+const portfolioSchema = z.object({
+  title: z.string(),
+  description: z.string().optional(),
+  summary: z.string(),
+  experience: z.array(
+    z.object({
+      role: z.string(),
+      company: z.string(),
+      location: z.string(),
+      period: z.string(),
+      bullets: z.array(z.string()),
+    })
+  ),
+  projects: z.array(
+    z.object({
+      name: z.string(),
+      type: z.string(),
+      stack: z.array(z.string()),
+      description: z.string(),
+      repo: z.string(),
+      liveUrl: z.string().nullable().optional(),
+    })
+  ),
+  skillGroups: z.array(
+    z.object({
+      label: z.string(),
+      skills: z.array(z.string()),
+    })
+  ),
+  education: z.array(
+    z.object({
+      degree: z.string(),
+      school: z.string(),
+      period: z.string(),
+      note: z.string().nullable().optional(),
+    })
+  ),
+  activities: z.array(
+    z.object({
+      text: z.string(),
+      links: z
+        .array(z.object({ label: z.string(), href: z.string() }))
+        .optional(),
+    })
+  ),
+  contact: z.array(
+    z.object({
+      label: z.string(),
+      href: z.string(),
+      icon: z.string(),
+    })
+  ),
+});
+
+const aboutSchema = z.object({
+  title: z.string(),
+  description: z.string().optional(),
+  greeting: z.string(),
+  name: z.string(),
+  intro: z.string(),
+  sections: z.array(
+    z.object({
+      label: z.string(),
+      paragraphs: z.array(z.string()),
+    })
+  ),
+  closing: z.string(),
+  builtWith: z.string(),
+});
+
 const essaySchema = z.object({
   title: z.string(),
   description: z.string().optional(),
@@ -28,6 +98,14 @@ const starSchema = z.object({
 });
 
 export const collections = {
+  portfolio: defineCollection({
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/portfolio" }),
+    schema: portfolioSchema,
+  }),
+  about: defineCollection({
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/about" }),
+    schema: aboutSchema,
+  }),
   essays: defineCollection({
     loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/essays" }),
     schema: essaySchema,

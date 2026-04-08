@@ -1,7 +1,7 @@
 ---
 title: "The Control Unit — CU"
 description: "The part of the CPU that tells every other component what to do."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["computers", "CPU", "computing", "electronics"]
 draft: false
 ---

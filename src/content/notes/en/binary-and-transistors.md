@@ -1,7 +1,7 @@
 ---
 title: "Binary Numbers and Transistors"
 description: "Zero and one — two digits that are enough to represent everything inside a computer."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["computers", "technology", "electronics", "computing"]
 draft: false
 ---

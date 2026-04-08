@@ -1,7 +1,7 @@
 ---
 title: "CPU Registers"
 description: "A computer — like a person — needs a temporary notepad while doing calculations."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["computers", "CPU", "computing", "electronics"]
 draft: false
 ---

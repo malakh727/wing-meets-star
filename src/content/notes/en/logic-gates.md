@@ -1,7 +1,7 @@
 ---
 title: "Logic Gates — How a Computer Calculates"
 description: "From transistor to boolean algebra to arithmetic operations — this is how a computer thinks."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["computers", "electronics", "computing", "mathematics"]
 draft: false
 ---

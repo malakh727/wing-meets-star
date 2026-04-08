@@ -1,7 +1,7 @@
 ---
 title: "Inputs and Outputs — Behind the Scenes"
 description: "From a keypress to a dot of light on the screen — here's what happens in between."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["computers", "technology", "computing"]
 draft: false
 ---

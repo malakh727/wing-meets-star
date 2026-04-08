@@ -1,7 +1,7 @@
 ---
 title: "Can Machines Have Feelings?"
 description: "Affective computing — teaching machines to read human emotions and respond to them."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["AI", "computing", "technology"]
 draft: false
 ---

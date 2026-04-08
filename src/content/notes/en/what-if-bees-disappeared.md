@@ -1,14 +1,14 @@
 ---
 title: "What If the Bees Disappeared?"
 description: "You may have wished for it after a sting — but a world without bees might mean no world at all."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["environment", "biology", "ecology", "food"]
 draft: false
 ---
 
 You may have been stung painfully by bees and wished for them to disappear, and asked about the role of bees other than honey on your breakfast table. But a wish like the disappearance of bees is very dangerous — as if you wish the end of the world, because the fate of humans may be tied to them.
 
-There is a saying attributed to Einstein: *"If the bees disappear from Earth, there will be only a few years left for humans to disappear after them."*
+There is a saying attributed to Einstein: _"If the bees disappear from Earth, there will be only a few years left for humans to disappear after them."_
 
 ## What do bees actually do?
 

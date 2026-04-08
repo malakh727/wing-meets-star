@@ -1,7 +1,7 @@
 ---
 title: "Facts About the ALU"
 description: "The heart of the CPU, built from logic gates, proposed by a mathematician in 1945."
-date: "2022-01-01"
+date: "2020-01-01"
 tags: ["computers", "CPU", "computing", "electronics"]
 draft: false
 ---
