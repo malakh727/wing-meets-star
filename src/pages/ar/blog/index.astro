@@ -2,66 +2,82 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 
-const essays = await getCollection("essays");
-const posts = essays
-  .filter((e) => e.id.startsWith("ar/") && !e.data.draft)
+const all = await getCollection("writing");
+const posts = all
+  .filter((p) => p.id.startsWith("ar/") && !p.data.draft)
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
-<BaseLayout title="المقالات" lang="ar">
+<BaseLayout title="الكتابة" description="مقالات وملاحظات في الهندسة والكتابة والفضول." lang="ar">
   <div class="max-w-3xl mx-auto px-6 py-20">
+
     <header class="mb-16">
-      <p class="font-label text-xs text-primary uppercase tracking-widest mb-3">مقالات</p>
-      <h1
-        class="font-display font-semibold text-on-surface"
-        style="font-size: 3rem; letter-spacing: -0.01em;"
-      >
-        المدونة
+      <p class="font-label text-xs text-primary uppercase tracking-widest mb-3">الكتابة</p>
+      <h1 class="font-display font-semibold text-on-surface" style="font-size: 3rem; letter-spacing: -0.01em;">
+        حديقة المعرفة
       </h1>
       <p class="font-body text-lg text-on-surface-muted mt-4 leading-relaxed max-w-lg">
-        أفكار مطوّلة في الهندسة والكتابة والفضول.
+        مقالات مطوّلة وملاحظات قصيرة متطورة — أفكار في مراحل نمو مختلفة.
       </p>
     </header>
 
-    {
-      posts.length === 0 ? (
-        <p class="font-label text-sm text-on-surface-muted text-center py-12">
-          لا توجد مقالات بعد — عد قريباً.
-        </p>
-      ) : (
-        <ol class="space-y-1">
-          {posts.map((post) => {
-            const slug = post.id.slice(3);
-            const date = new Date(post.data.date).toLocaleDateString("ar-SA", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            });
-            return (
-              <li>
-                <a
-                  href={`/ar/blog/${slug}`}
-                  class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-5 px-4 -mx-4 rounded transition-colors duration-200 hover:bg-surface-low card-glow"
-                >
-                  <time class="font-label text-sm text-on-surface-muted shrink-0 mt-1 sm:w-40">
-                    {date}
-                  </time>
-                  <div class="flex-1">
+    {posts.length === 0 ? (
+      <p class="font-label text-sm text-on-surface-muted text-center py-12">
+        لا توجد كتابات بعد — عد قريباً.
+      </p>
+    ) : (
+      <ol class="space-y-1">
+        {posts.map((post) => {
+          const slug = post.id.slice(3);
+          const date = new Date(post.data.date).toLocaleDateString("ar-SA", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+          return (
+            <li>
+              <a
+                href={`/ar/blog/${slug}`}
+                class="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-5 px-4 -mx-4 rounded transition-colors duration-200 hover:bg-surface-low card-glow"
+              >
+                <time class="font-label text-sm text-on-surface-muted shrink-0 mt-1 sm:w-40">
+                  {date}
+                </time>
+                <div class="flex-1">
+                  <div class="flex items-baseline gap-2 mb-0.5">
                     <h2 class="font-body text-xl text-on-surface group-hover:text-primary transition-colors duration-200 leading-snug">
                       {post.data.title}
                     </h2>
-                    {post.data.description && (
-                      <p class="font-body text-base text-on-surface-muted mt-1 leading-relaxed">
-                        {post.data.description}
-                      </p>
-                    )}
+                    <span
+                      class="font-label text-xs shrink-0"
+                      style={post.data.type === "essay"
+                        ? "color: #adc6ff; opacity: 0.7;"
+                        : "color: #E9C176; opacity: 0.7;"}
+                    >
+                      {post.data.type === "essay" ? "مقال" : "ملاحظة"}
+                    </span>
                   </div>
-                </a>
-              </li>
-            );
-          })}
-        </ol>
-      )
-    }
+                  {post.data.description && (
+                    <p class="font-body text-base text-on-surface-muted mt-1 leading-relaxed">
+                      {post.data.description}
+                    </p>
+                  )}
+                  {post.data.tags && (
+                    <div class="flex flex-wrap gap-2 mt-2">
+                      {post.data.tags.map((tag) => (
+                        <span class="font-label text-xs text-on-surface-muted px-2 py-0.5 rounded" style="background-color: #2A2A2A;">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    )}
+
   </div>
 </BaseLayout>

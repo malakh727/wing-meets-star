@@ -71,15 +71,8 @@ const aboutSchema = z.object({
   builtWith: z.string(),
 });
 
-const essaySchema = z.object({
-  title: z.string(),
-  description: z.string().optional(),
-  date: z.string(),
-  tags: z.array(z.string()).optional(),
-  draft: z.boolean().optional().default(false),
-});
-
-const noteSchema = z.object({
+const writingSchema = z.object({
+  type: z.enum(["essay", "note"]),
   title: z.string(),
   description: z.string().optional(),
   date: z.string(),
@@ -106,13 +99,9 @@ export const collections = {
     loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/about" }),
     schema: aboutSchema,
   }),
-  essays: defineCollection({
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/essays" }),
-    schema: essaySchema,
-  }),
-  notes: defineCollection({
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/notes" }),
-    schema: noteSchema,
+  writing: defineCollection({
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/writing" }),
+    schema: writingSchema,
   }),
   stars: defineCollection({
     loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/stars" }),

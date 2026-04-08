@@ -3,23 +3,23 @@ import { getCollection, render } from "astro:content";
 import BlogLayout from "../../../layouts/BlogLayout.astro";
 
 export async function getStaticPaths() {
-  const notes = await getCollection("notes");
-  return notes
-    .filter((n) => n.id.startsWith("ar/") && !n.data.draft)
-    .map((n) => ({
-      params: { slug: n.id.slice(3) },
-      props: { note: n },
+  const all = await getCollection("writing");
+  return all
+    .filter((p) => p.id.startsWith("ar/") && p.data.type === "note" && !p.data.draft)
+    .map((p) => ({
+      params: { slug: p.id.slice(3) },
+      props: { post: p },
     }));
 }
 
-const { note } = Astro.props;
-const { Content } = await render(note);
+const { post } = Astro.props;
+const { Content } = await render(post);
 ---
 
 <BlogLayout
-  title={note.data.title}
-  description={note.data.description}
-  date={note.data.date}
+  title={post.data.title}
+  description={post.data.description}
+  date={post.data.date}
   lang="ar"
 >
   <Content />
