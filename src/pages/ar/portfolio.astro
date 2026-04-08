@@ -11,35 +11,38 @@ const { title, description, summary, experience, projects, skillGroups, educatio
 
     <!-- Header -->
     <header class="mb-20">
-      <p class="font-label text-xs text-primary uppercase tracking-widest mb-3">العمل</p>
-      <h1 class="font-display font-semibold text-on-surface" style="font-size: 2.5rem; letter-spacing: -0.01em;">
+      <p class="font-label text-sm text-primary uppercase tracking-widest mb-4">العمل</p>
+      <h1 class="font-display font-semibold text-on-surface" style="font-size: 3.5rem; letter-spacing: -0.01em; line-height: 1.2;">
         ملف الأعمال
       </h1>
-      <p class="font-body text-base text-on-surface-muted mt-4 leading-relaxed max-w-2xl">
+      <p class="font-body text-lg text-on-surface-muted mt-5 leading-relaxed max-w-2xl">
         {summary}
       </p>
     </header>
 
     <!-- Experience -->
-    <section class="mb-20">
-      <h2 class="font-label text-xs text-on-surface-muted uppercase tracking-widest mb-10">الخبرة</h2>
+    <section class="mb-24">
+      <div class="flex items-center gap-3 mb-12">
+        <div class="w-5 h-px" style="background: var(--color-primary); opacity: 0.5;"></div>
+        <h2 class="font-label text-sm text-on-surface uppercase tracking-widest">الخبرة</h2>
+      </div>
       {experience.map((job) => (
         <div class="relative pe-6 border-e border-outline-variant">
-          <div class="absolute -end-1 top-1.5 w-2 h-2 rounded-full bg-primary opacity-60" />
+          <div class="absolute -end-1.5 top-2 w-3 h-3 rounded-full bg-surface border-2" style="border-color: var(--color-primary); opacity: 0.8;" />
           <div class="mb-2 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
             <div>
-              <span class="font-display font-semibold text-on-surface" style="font-size: 1.1rem;">{job.role}</span>
+              <span class="font-display font-semibold text-on-surface" style="font-size: 1.25rem;">{job.role}</span>
               <span class="font-body text-on-surface-muted"> — </span>
-              <span class="font-body text-tertiary">{job.company}</span>
+              <span class="font-body text-tertiary text-lg">{job.company}</span>
             </div>
-            <span class="font-label text-xs text-on-surface-muted shrink-0">{job.period}</span>
+            <span class="font-label text-sm text-on-surface-muted shrink-0">{job.period}</span>
           </div>
-          <p class="font-label text-xs text-on-surface-muted mb-4" style="letter-spacing: 0.03em;">{job.location}</p>
-          <ul class="space-y-2">
+          <p class="font-label text-sm text-on-surface-muted mb-5">{job.location}</p>
+          <ul class="space-y-3">
             {job.bullets.map((b) => (
               <li class="flex gap-3">
-                <span class="text-primary mt-1 shrink-0" style="font-size: 0.5rem;">●</span>
-                <span class="font-body text-sm text-on-surface-muted leading-relaxed">{b}</span>
+                <span class="text-primary mt-1.5 shrink-0" style="font-size: 0.45rem;">●</span>
+                <span class="font-body text-base text-on-surface-muted leading-relaxed">{b}</span>
               </li>
             ))}
           </ul>
@@ -48,29 +51,32 @@ const { title, description, summary, experience, projects, skillGroups, educatio
     </section>
 
     <!-- Projects -->
-    <section class="mb-20">
-      <h2 class="font-label text-xs text-on-surface-muted uppercase tracking-widest mb-10">المشاريع</h2>
-      <div class="grid md:grid-cols-2 gap-4">
+    <section class="mb-24">
+      <div class="flex items-center gap-3 mb-12">
+        <div class="w-5 h-px" style="background: var(--color-primary); opacity: 0.5;"></div>
+        <h2 class="font-label text-sm text-on-surface uppercase tracking-widest">المشاريع</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5 reveal-stagger">
         {projects.map((proj) => (
-          <div class="p-6 rounded bg-surface-low card-glow flex flex-col gap-4">
+          <div class="p-7 rounded bg-surface-low card-glow flex flex-col gap-5">
             <div>
-              <div class="flex items-start justify-between gap-2 mb-1">
-                <h3 class="font-display font-semibold text-on-surface" style="font-size: 1rem;">{proj.name}</h3>
-                <span class="font-label text-xs text-tertiary shrink-0 mt-0.5">{proj.type}</span>
+              <div class="flex items-start justify-between gap-2 mb-2">
+                <h3 class="font-display font-semibold text-on-surface" style="font-size: 1.15rem;">{proj.name}</h3>
+                <span class="font-label text-xs text-tertiary shrink-0 mt-1">{proj.type}</span>
               </div>
-              <div class="flex flex-wrap gap-1.5 mb-3">
+              <div class="flex flex-wrap gap-2 mb-4">
                 {proj.stack.map((s) => (
-                  <span class="font-label text-xs text-on-surface-muted px-2 py-0.5 rounded" style="background-color: #2A2A2A;">{s}</span>
+                  <span class="font-label text-xs text-on-surface-muted px-2.5 py-1 rounded" style="background-color: #2A2A2A;">{s}</span>
                 ))}
               </div>
-              <p class="font-body text-sm text-on-surface-muted leading-relaxed">{proj.description}</p>
+              <p class="font-body text-base text-on-surface-muted leading-relaxed">{proj.description}</p>
             </div>
-            <div class="flex gap-3 mt-auto">
-              <a href={proj.repo} target="_blank" rel="noopener noreferrer" class="font-label text-xs text-primary hover:opacity-80 transition-opacity" style="letter-spacing: 0.03em;">
+            <div class="flex gap-4 mt-auto">
+              <a href={proj.repo} target="_blank" rel="noopener noreferrer" class="font-label text-sm text-primary hover:opacity-80 transition-opacity">
                 عرض على GitHub ↗
               </a>
               {proj.liveUrl && (
-                <a href={proj.liveUrl} target="_blank" rel="noopener noreferrer" class="font-label text-xs text-tertiary hover:opacity-80 transition-opacity" style="letter-spacing: 0.03em;">
+                <a href={proj.liveUrl} target="_blank" rel="noopener noreferrer" class="font-label text-sm text-tertiary hover:opacity-80 transition-opacity">
                   عرض مباشر ↗
                 </a>
               )}
@@ -81,17 +87,20 @@ const { title, description, summary, experience, projects, skillGroups, educatio
     </section>
 
     <!-- Skills -->
-    <section class="mb-20">
-      <h2 class="font-label text-xs text-on-surface-muted uppercase tracking-widest mb-10">المهارات</h2>
-      <div class="space-y-5">
+    <section class="mb-24">
+      <div class="flex items-center gap-3 mb-12">
+        <div class="w-5 h-px" style="background: var(--color-primary); opacity: 0.5;"></div>
+        <h2 class="font-label text-sm text-on-surface uppercase tracking-widest">المهارات</h2>
+      </div>
+      <div class="space-y-6">
         {skillGroups.map((group) => (
-          <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
-            <span class="font-label text-xs text-on-surface-muted shrink-0 sm:w-36 pt-1" style="letter-spacing: 0.03em;">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8">
+            <span class="font-label text-sm text-on-surface-muted shrink-0 sm:w-40 pt-1">
               {group.label}
             </span>
             <div class="flex flex-wrap gap-2">
               {group.skills.map((s) => (
-                <span class="font-label text-xs text-on-surface-muted px-3 py-1.5 rounded" style="background-color: #2A2A2A; letter-spacing: 0.02em;">{s}</span>
+                <span class="font-label text-sm text-on-surface-muted px-3 py-1.5 rounded" style="background-color: #2A2A2A;">{s}</span>
               ))}
             </div>
           </div>
@@ -100,30 +109,36 @@ const { title, description, summary, experience, projects, skillGroups, educatio
     </section>
 
     <!-- Education -->
-    <section class="mb-20">
-      <h2 class="font-label text-xs text-on-surface-muted uppercase tracking-widest mb-10">التعليم</h2>
-      <div class="space-y-6">
+    <section class="mb-24">
+      <div class="flex items-center gap-3 mb-12">
+        <div class="w-5 h-px" style="background: var(--color-primary); opacity: 0.5;"></div>
+        <h2 class="font-label text-sm text-on-surface uppercase tracking-widest">التعليم</h2>
+      </div>
+      <div class="space-y-8">
         {education.map((e) => (
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
             <div>
-              <p class="font-body text-base text-on-surface leading-snug">{e.degree}</p>
-              <p class="font-label text-xs text-on-surface-muted mt-1" style="letter-spacing: 0.03em;">{e.school}</p>
-              {e.note && <p class="font-label text-xs text-primary mt-1">{e.note}</p>}
+              <p class="font-body text-lg text-on-surface leading-snug">{e.degree}</p>
+              <p class="font-label text-sm text-on-surface-muted mt-1">{e.school}</p>
+              {e.note && <p class="font-label text-sm text-primary mt-1">{e.note}</p>}
             </div>
-            <span class="font-label text-xs text-on-surface-muted shrink-0">{e.period}</span>
+            <span class="font-label text-sm text-on-surface-muted shrink-0">{e.period}</span>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Leadership & Activities -->
-    <section class="mb-20">
-      <h2 class="font-label text-xs text-on-surface-muted uppercase tracking-widest mb-10">القيادة والأنشطة</h2>
-      <ul class="space-y-3">
+    <section class="mb-24">
+      <div class="flex items-center gap-3 mb-12">
+        <div class="w-5 h-px" style="background: var(--color-primary); opacity: 0.5;"></div>
+        <h2 class="font-label text-sm text-on-surface uppercase tracking-widest">القيادة والأنشطة</h2>
+      </div>
+      <ul class="space-y-4">
         {activities.map((a) => (
-          <li class="flex gap-3">
-            <span class="text-tertiary mt-1 shrink-0" style="font-size: 0.5rem;">●</span>
-            <span class="font-body text-sm text-on-surface-muted leading-relaxed">
+          <li class="flex gap-4">
+            <span class="text-tertiary mt-2 shrink-0" style="font-size: 0.45rem;">●</span>
+            <span class="font-body text-base text-on-surface-muted leading-relaxed">
               {a.text}{a.links && " "}
               {a.links?.map((l, i) => (
                 <>
@@ -139,15 +154,17 @@ const { title, description, summary, experience, projects, skillGroups, educatio
 
     <!-- Contact -->
     <section>
-      <h2 class="font-label text-xs text-on-surface-muted uppercase tracking-widest mb-6">التواصل</h2>
+      <div class="flex items-center gap-3 mb-8">
+        <div class="w-5 h-px" style="background: var(--color-primary); opacity: 0.5;"></div>
+        <h2 class="font-label text-sm text-on-surface uppercase tracking-widest">التواصل</h2>
+      </div>
       <div class="flex flex-wrap gap-6">
         {contact.map((c) => (
           <a
             href={c.href}
             target={c.href.startsWith("mailto") ? undefined : "_blank"}
             rel="noopener noreferrer"
-            class="font-label text-sm text-on-surface-muted hover:text-primary transition-colors duration-200"
-            style="letter-spacing: 0.03em;"
+            class="font-label text-base text-on-surface-muted hover:text-primary transition-colors duration-200"
           >
             {c.label} {c.icon}
           </a>

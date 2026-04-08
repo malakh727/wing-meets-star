@@ -3,7 +3,7 @@ title: "Eye Contact"
 description: "Eyes hold so much information about one's feelings — it became a habit to look directly into them."
 date: "2020-06-06"
 tags: ["observation", "people", "feelings"]
-draft: false
+draft: true
 ---
 
 Sparkles all over the place. Is it just me? Or did his eyes hold enamored types of passion and mystery?

@@ -62,18 +62,110 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
         </div>
 
-        <!-- Decorative side -->
+        <!-- Decorative side — orrery -->
         <div class="md:col-span-2 hidden md:flex items-center justify-center">
           <div class="relative w-64 h-64">
-            <div class="absolute inset-0 rounded-full" style="border: 1px solid rgba(173,198,255,0.08);"></div>
-            <div class="absolute inset-8 rounded-full" style="border: 1px solid rgba(173,198,255,0.06);"></div>
-            <div class="absolute inset-16 rounded-full" style="border: 1px solid rgba(173,198,255,0.1);"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <span style="font-size: 2rem; color: #E9C176; opacity: 0.8;">✦</span>
+
+            <!-- Outer ring -->
+            <div class="absolute inset-0 rounded-full" style="border: 1px solid rgba(173,198,255,0.1);"></div>
+            <div class="absolute inset-0 rounded-full orbit-cw-slow">
+              <div class="orbit-dot" style="width:6px;height:6px;top:-3px;left:calc(50% - 3px);background:#adc6ff;box-shadow:0 0 6px 2px rgba(173,198,255,0.5);"></div>
             </div>
+
+            <!-- Middle ring -->
+            <div class="absolute inset-8 rounded-full" style="border: 1px dashed rgba(173,198,255,0.12);"></div>
+            <div class="absolute inset-8 rounded-full orbit-ccw-med">
+              <div class="orbit-dot" style="width:5px;height:5px;top:-2.5px;left:calc(50% - 2.5px);background:#E9C176;box-shadow:0 0 6px 2px rgba(233,193,118,0.5);"></div>
+            </div>
+
+            <!-- Inner ring -->
+            <div class="absolute inset-16 rounded-full" style="border: 1px solid rgba(173,198,255,0.15);"></div>
+            <div class="absolute inset-16 rounded-full orbit-cw-fast">
+              <div class="orbit-dot" style="width:4px;height:4px;top:-2px;left:calc(50% - 2px);background:#b9c8de;box-shadow:0 0 4px 1px rgba(185,200,222,0.5);"></div>
+            </div>
+
+            <!-- Central star -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="star-orrery" style="font-size: 2rem; color: #E9C176;">✦</span>
+            </div>
+
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Sections overview -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <h2
+      class="font-display font-semibold text-on-surface-muted mb-12"
+      style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;"
+    >
+      استكشف
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {
+        [
+          {
+            href: "/ar/blog",
+            label: "المدونة",
+            title: "مقالات",
+            desc: "تفكير معمّق في الهندسة والحرفة والفضول.",
+            icon: "✍",
+          },
+          {
+            href: "/ar/garden",
+            label: "الحديقة",
+            title: "حديقة المعرفة",
+            desc: "ملاحظات قصيرة ومتطورة تتشابك كخريطة حية.",
+            icon: "🌱",
+          },
+          {
+            href: "/ar/stars",
+            label: "النجوم",
+            title: "قصص النجوم",
+            desc: "سرد إبداعي وكوكبة تفاعلية.",
+            icon: "✦",
+          },
+          {
+            href: "/ar/portfolio",
+            label: "الأعمال",
+            title: "ملف الأعمال",
+            desc: "مشاريع ومهارات وخبرة مهنية.",
+            icon: "◈",
+          },
+          {
+            href: "/ar/about",
+            label: "عني",
+            title: "عني",
+            desc: "مقدمة قصيرة عن العقل خلف هذه المساحة.",
+            icon: "◎",
+          },
+        ].map((item) => (
+          <a
+            href={item.href}
+            class="group block p-6 rounded bg-surface-low hover:bg-surface-high card-glow"
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-xl text-tertiary mt-0.5 opacity-70 group-hover:opacity-100 transition-opacity">
+                {item.icon}
+              </span>
+              <div>
+                <p class="font-label text-xs text-on-surface-muted uppercase tracking-wider mb-1">
+                  {item.label}
+                </p>
+                <h3 class="font-body text-xl text-on-surface font-medium mb-2">
+                  {item.title}
+                </h3>
+                <p class="font-body text-base text-on-surface-muted leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          </a>
+        ))
+      }
     </div>
   </section>
 </BaseLayout>

@@ -37,8 +37,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             class="font-display font-semibold text-on-surface leading-tight"
             style="font-size: 4.25rem; letter-spacing: -0.02em; line-height: 1.08;"
           >
-            Where the wing<br />
-            <span style="color: #E9C176;">meets the star</span><img
+            Where wing<br />
+            <span style="color: #E9C176;">meets star</span><img
               src="/assets/wing-meet-star-logo-removebg.png"
               alt="Wing Meets Star logo"
               style="display: inline-block; height: 1.5em; vertical-align: middle; margin-left: 0.1em; animation: logoFloat 1.8s ease-in-out infinite;"
@@ -70,44 +70,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
         </div>
 
-        <!-- Right: 40% — decorative void -->
+        <!-- Right: 40% — orrery -->
         <div class="md:col-span-2 hidden md:flex items-center justify-center">
           <div class="relative w-64 h-64">
-            <!-- Concentric rings -->
-            <div
-              class="absolute inset-0 rounded-full"
-              style="border: 1px solid rgba(173,198,255,0.08);"
-            >
+
+            <!-- Outer ring (static) -->
+            <div class="absolute inset-0 rounded-full" style="border: 1px solid rgba(173,198,255,0.1);"></div>
+            <!-- Outer orbiting dot -->
+            <div class="absolute inset-0 rounded-full orbit-cw-slow">
+              <div class="orbit-dot" style="width:6px;height:6px;top:-3px;left:calc(50% - 3px);background:#adc6ff;box-shadow:0 0 6px 2px rgba(173,198,255,0.5);"></div>
             </div>
-            <div
-              class="absolute inset-8 rounded-full"
-              style="border: 1px solid rgba(173,198,255,0.06);"
-            >
+
+            <!-- Middle ring (static, dashed feel via opacity gap) -->
+            <div class="absolute inset-8 rounded-full" style="border: 1px dashed rgba(173,198,255,0.12);"></div>
+            <!-- Middle orbiting dot — counter-clockwise, gold -->
+            <div class="absolute inset-8 rounded-full orbit-ccw-med">
+              <div class="orbit-dot" style="width:5px;height:5px;top:-2.5px;left:calc(50% - 2.5px);background:#E9C176;box-shadow:0 0 6px 2px rgba(233,193,118,0.5);"></div>
             </div>
-            <div
-              class="absolute inset-16 rounded-full"
-              style="border: 1px solid rgba(173,198,255,0.1);"
-            >
+
+            <!-- Inner ring (static) -->
+            <div class="absolute inset-16 rounded-full" style="border: 1px solid rgba(173,198,255,0.15);"></div>
+            <!-- Inner orbiting dot — fast, blue-gray -->
+            <div class="absolute inset-16 rounded-full orbit-cw-fast">
+              <div class="orbit-dot" style="width:4px;height:4px;top:-2px;left:calc(50% - 2px);background:#b9c8de;box-shadow:0 0 4px 1px rgba(185,200,222,0.5);"></div>
             </div>
-            <!-- Central star -->
+
+            <!-- Central star — slow spin + pulse -->
             <div class="absolute inset-0 flex items-center justify-center">
-              <span style="font-size: 2rem; color: #E9C176; opacity: 0.8;"
-                >✦</span
-              >
+              <span class="star-orrery" style="font-size: 2rem; color: #E9C176;">✦</span>
             </div>
-            <!-- Scattered dots -->
-            <div
-              class="absolute top-4 right-10 w-1 h-1 rounded-full bg-primary opacity-40"
-            >
-            </div>
-            <div
-              class="absolute bottom-8 left-6 w-0.5 h-0.5 rounded-full bg-secondary opacity-50"
-            >
-            </div>
-            <div
-              class="absolute top-16 left-4 w-1.5 h-1.5 rounded-full bg-tertiary opacity-30"
-            >
-            </div>
+
           </div>
         </div>
       </div>
@@ -191,7 +183,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <style>
   @keyframes logoFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
-    50% { transform: translateY(-6px) rotate(3deg); opacity: 1; }
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.9;
+    }
+    50% {
+      transform: translateY(-6px) rotate(3deg);
+      opacity: 1;
+    }
   }
 </style>

@@ -85,12 +85,62 @@
 
 /* Card ambient glow */
 .card-glow {
-  transition: background-color 0.2s ease, box-shadow 0.3s ease;
+  transition: background-color 0.2s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .card-glow:hover {
-  box-shadow: 0 8px 40px rgba(229, 226, 225, 0.04), 0 2px 12px rgba(173, 198, 255, 0.03);
+  box-shadow: 0 8px 40px rgba(229, 226, 225, 0.05), 0 2px 16px rgba(173, 198, 255, 0.06);
+  transform: translateY(-2px);
 }
+
+/* Scroll-reveal — applied automatically by BaseLayout observer */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger reveal for grid children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0ms; }
+.reveal-stagger.is-visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 70ms; }
+.reveal-stagger.is-visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 140ms; }
+.reveal-stagger.is-visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 210ms; }
+
+/* Subtle float — for decorative accent elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-5px); }
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Orbital orrery animations */
+@keyframes orbitCW  { to { transform: rotate(360deg);  } }
+@keyframes orbitCCW { to { transform: rotate(-360deg); } }
+@keyframes starSpin { to { transform: rotate(360deg);  } }
+@keyframes starPulse {
+  0%, 100% { opacity: 0.7; text-shadow: 0 0 0px transparent; }
+  50%       { opacity: 1;   text-shadow: 0 0 18px rgba(233,193,118,0.6); }
+}
+
+.orbit-cw-slow   { animation: orbitCW  14s linear infinite; }
+.orbit-ccw-med   { animation: orbitCCW  8s linear infinite; }
+.orbit-cw-fast   { animation: orbitCW   4s linear infinite; }
+.orbit-dot       { position: absolute; border-radius: 50%; }
+.star-orrery     { display: inline-block; animation: starSpin 30s linear infinite, starPulse 3s ease-in-out infinite; }
 
 /* Prose styles for rendered markdown */
 .prose {

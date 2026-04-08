@@ -45,7 +45,19 @@ projects:
 
 skillGroups:
   - label: "Frontend"
-    skills: ["Angular", "Astro", "React", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind", "DaisyUI"]
+    skills:
+      [
+        "Angular",
+        "Astro",
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Tailwind",
+        "DaisyUI",
+      ]
   - label: "Backend"
     skills: ["Node.js", "Express.js", "Strapi", "Frontmatter CMS", "Deno"]
   - label: "Testing"
@@ -55,7 +67,8 @@ skillGroups:
   - label: "Tools"
     skills: ["Git", "Monorepo", "Linux", "Figma"]
   - label: "Concepts"
-    skills: ["Data Structures & Algorithms", "Performance Optimisation", "REST APIs"]
+    skills:
+      ["Data Structures & Algorithms", "Performance Optimisation", "REST APIs"]
   - label: "Basic Programming"
     skills: ["Python", "C++"]
   - label: "Cloud"
@@ -77,8 +90,6 @@ activities:
     links:
       - label: "Paper ↗"
         href: "https://www.tandfonline.com/doi/full/10.1080/00268976.2025.2550568"
-      - label: "ORCID ↗"
-        href: "https://orcid.org/0009-0006-1038-8004"
   - text: "Mentored an intern on a translation-related project at Beno, providing guidance and reviewing deliverables"
 
 contact:

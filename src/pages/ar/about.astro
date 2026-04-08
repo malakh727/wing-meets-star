@@ -10,38 +10,38 @@ const { greeting, name, intro, sections, closing, builtWith, title, description 
   <div class="max-w-2xl mx-auto px-6 py-20">
 
     <!-- Header -->
-    <header class="mb-16">
-      <p class="font-label text-xs text-primary uppercase tracking-widest mb-3">عني</p>
-      <h1 class="font-display font-semibold text-on-surface" style="font-size: 2.5rem; letter-spacing: -0.01em;">
+    <header class="mb-20">
+      <p class="font-label text-sm text-primary uppercase tracking-widest mb-4">عني</p>
+      <h1 class="font-display font-semibold text-on-surface" style="font-size: 3.5rem; letter-spacing: -0.01em; line-height: 1.2;">
         {greeting}
       </h1>
-      <p class="font-body text-xl text-on-surface-muted mt-3 leading-relaxed">
+      <p class="font-body text-2xl text-on-surface-muted mt-4 leading-relaxed">
         {name}
       </p>
     </header>
 
     <!-- Intro -->
-    <div class="mb-16 ps-4" style="border-inline-start: 2px solid var(--color-primary); opacity: 0.9;">
-      <p class="font-body text-base text-on-surface leading-relaxed">
+    <div class="mb-20 ps-5" style="border-inline-start: 2px solid var(--color-primary);">
+      <p class="font-body text-lg text-on-surface leading-relaxed">
         {intro}
       </p>
     </div>
 
     <!-- Sections -->
-    <div class="space-y-14">
+    <div class="space-y-16">
       {sections.map((section, i) => (
         <div>
-          <div class="flex items-baseline gap-3 mb-4">
-            <span class="font-label text-xs text-primary opacity-40" style="font-variant-numeric: tabular-nums;">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="font-label text-base text-primary" style="opacity: 0.5; font-variant-numeric: tabular-nums; min-width: 1.6rem;">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <p class="font-label text-xs text-on-surface-muted uppercase tracking-widest">
+            <h2 class="font-label text-sm text-on-surface uppercase tracking-widest">
               {section.label}
-            </p>
+            </h2>
           </div>
-          <div class="space-y-4 ps-6">
+          <div class="space-y-5 ps-9">
             {section.paragraphs.map((p) => (
-              <p class="font-body text-base text-on-surface-muted leading-relaxed">{p}</p>
+              <p class="font-body text-lg text-on-surface-muted leading-relaxed">{p}</p>
             ))}
           </div>
         </div>
@@ -49,8 +49,8 @@ const { greeting, name, intro, sections, closing, builtWith, title, description 
     </div>
 
     <!-- Closing -->
-    <div class="mt-20 p-6 rounded bg-surface-low" style="border-inline-start: 2px solid var(--color-tertiary);">
-      <p class="font-body text-base text-on-surface-muted leading-relaxed italic">
+    <div class="mt-24 p-7 rounded bg-surface-low" style="border-inline-start: 2px solid var(--color-tertiary);">
+      <p class="font-body text-lg text-on-surface-muted leading-relaxed italic">
         {closing}
       </p>
     </div>

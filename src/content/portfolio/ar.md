@@ -45,7 +45,19 @@ projects:
 
 skillGroups:
   - label: "الواجهة الأمامية"
-    skills: ["Angular", "Astro", "React", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind", "DaisyUI"]
+    skills:
+      [
+        "Angular",
+        "Astro",
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Tailwind",
+        "DaisyUI",
+      ]
   - label: "الخلفية"
     skills: ["Node.js", "Express.js", "Strapi", "Frontmatter CMS", "Deno"]
   - label: "الاختبارات"
@@ -62,12 +74,12 @@ skillGroups:
     skills: ["AWS Amplify", "Route 53"]
 
 education:
-  - degree: "ماجستير في هندسة الحاسوب الذكية والآمنة"
+  - degree: "ماجستير في هندسة أنظمة الحاسوب الذكية والآمنة"
     school: "الجامعة الهاشمية"
     period: "2025 – حاليًا"
     note: null
   - degree: "بكالوريوس هندسة الحاسوب"
-    school: "جامعة البلقاء التطبيقية — كلية الهندسة"
+    school: "جامعة البلقاء التطبيقية — كلية الهندسة التكنولوجية"
     period: "2018 – 2023"
     note: "المعدل التراكمي: 3.71 / 4.00"
 
@@ -77,8 +89,6 @@ activities:
     links:
       - label: "الورقة البحثية ↗"
         href: "https://www.tandfonline.com/doi/full/10.1080/00268976.2025.2550568"
-      - label: "ORCID ↗"
-        href: "https://orcid.org/0009-0006-1038-8004"
   - text: "إرشاد متدرب في مشروع ترجمة ببيئة العمل، وتقديم التوجيه ومراجعة المخرجات"
 
 contact:
