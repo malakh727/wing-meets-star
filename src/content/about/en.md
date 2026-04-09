@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "A brief introduction to the mind behind Wing Meet Star."
+description: "A brief introduction to the mind behind Wing Meets Star."
 greeting: "Hello."
 name: "I'm Malak."
 intro: "I like understanding things — how they work, why they exist, and how they connect. Sometimes that takes the form of code, sometimes it's reading, and sometimes it's just sitting with an idea until it becomes clearer."

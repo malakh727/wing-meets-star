@@ -1,4 +1,4 @@
-# 🌌 Wing Meet Star
+# 🌌 Wing Meets Star
 
 A personal knowledge garden, blog, and portfolio.
 
@@ -184,7 +184,7 @@ npm run build
 
 ## ✨ Meaning
 
-**Wing Meet Star**
+**Wing Meets Star**
 
 Represents:
 

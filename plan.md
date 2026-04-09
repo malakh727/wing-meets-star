@@ -1,8 +1,8 @@
-# Wing Meet Star — Project Plan
+# Wing Meets Star — Project Plan
 
 ## 🌌 Project Overview
 
-"Wing Meet Star" is a personal knowledge garden and portfolio website.
+"Wing Meets Star" is a personal knowledge garden and portfolio website.
 
 It combines:
 
