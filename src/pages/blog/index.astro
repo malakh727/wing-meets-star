@@ -51,8 +51,8 @@ const posts = all
                     <span
                       class="font-label text-xs shrink-0"
                       style={post.data.type === "essay"
-                        ? "color: #adc6ff; opacity: 0.7;"
-                        : "color: #E9C176; opacity: 0.7;"}
+                        ? "color: #B076E8; opacity: 0.8;"
+                        : "color: #2EC4C4; opacity: 0.8;"}
                     >
                       {post.data.type}
                     </span>
@@ -65,7 +65,7 @@ const posts = all
                   {post.data.tags && (
                     <div class="flex flex-wrap gap-2 mt-2">
                       {post.data.tags.map((tag) => (
-                        <span class="font-label text-xs text-on-surface-muted px-2 py-0.5 rounded" style="background-color: #2A2A2A;">
+                        <span class="font-label text-xs px-2 py-0.5 rounded" style="background-color: rgba(46,196,196,0.08); color: #2EC4C4; border: 1px solid rgba(46,196,196,0.2);">
                           {tag}
                         </span>
                       ))}

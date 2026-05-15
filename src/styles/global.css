@@ -2,35 +2,35 @@
 
 @theme {
   /* Surface hierarchy */
-  --color-surface: #131313;
-  --color-surface-low: #1C1B1B;
-  --color-surface-high: #2A2A2A;
-  --color-surface-highest: #353534;
+  --color-surface: #131315;
+  --color-surface-low: #1b1b1d;
+  --color-surface-high: #2a2a2c;
+  --color-surface-highest: #353437;
 
   /* Brand */
-  --color-primary: #adc6ff;
-  --color-primary-container: #4D8EFF;
-  --color-secondary: #b9c8de;
-  --color-tertiary: #E9C176;
+  --color-primary: #B076E8;
+  --color-primary-container: #b8a9d1;
+  --color-secondary: #2EC4C4;
+  --color-tertiary: #d1cac3;
 
   /* Text */
-  --color-on-surface: #E5E2E1;
-  --color-on-surface-muted: #9A9796;
+  --color-on-surface: #e5e1e4;
+  --color-on-surface-muted: #948f98;
 
   /* Utility */
-  --color-outline-variant: #424754;
+  --color-outline-variant: #49454d;
   --color-error-container: #93000A;
 
   /* Typography */
-  --font-display: "Space Grotesk", sans-serif;
+  --font-display: "Geist", sans-serif;
   --font-body: "Newsreader", serif;
-  --font-label: "Inter", sans-serif;
+  --font-label: "Geist", sans-serif;
 }
 
 @layer base {
   html {
-    background-color: #131313;
-    color: #E5E2E1;
+    background-color: #131315;
+    color: #e5e1e4;
     font-family: "Newsreader", serif;
     font-size: 17px;
   }
@@ -44,14 +44,14 @@
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #131313;
+    background: #131315;
   }
   ::-webkit-scrollbar-thumb {
-    background: #353534;
+    background: #353437;
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #424754;
+    background: #49454d;
   }
 }
 
@@ -89,7 +89,7 @@
 }
 
 .card-glow:hover {
-  box-shadow: 0 8px 40px rgba(229, 226, 225, 0.05), 0 2px 16px rgba(173, 198, 255, 0.06);
+  box-shadow: 0 8px 40px rgba(46, 196, 196, 0.05), 0 2px 16px rgba(46, 196, 196, 0.08);
   transform: translateY(-2px);
 }
 
@@ -133,7 +133,7 @@
 @keyframes starSpin { to { transform: rotate(360deg);  } }
 @keyframes starPulse {
   0%, 100% { opacity: 0.7; text-shadow: 0 0 0px transparent; }
-  50%       { opacity: 1;   text-shadow: 0 0 18px rgba(233,193,118,0.6); }
+  50%       { opacity: 1;   text-shadow: 0 0 18px rgba(209,202,195,0.6); }
 }
 
 .orbit-cw-slow   { animation: orbitCW  14s linear infinite; }
@@ -144,7 +144,7 @@
 
 /* Prose styles for rendered markdown */
 .prose {
-  color: #E5E2E1;
+  color: #e5e1e4;
   font-family: "Newsreader", serif;
   font-size: 1.125rem;
   line-height: 1.85;
@@ -155,45 +155,45 @@
 }
 
 .prose h2 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: #E5E2E1;
+  color: #e5e1e4;
   margin-top: 2.5em;
   margin-bottom: 0.75em;
 }
 
 .prose h3 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: #E5E2E1;
+  color: #e5e1e4;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
 
 .prose strong {
   font-weight: 600;
-  color: #E5E2E1;
+  color: #e5e1e4;
 }
 
 .prose em {
   font-style: italic;
-  color: #b9c8de;
+  color: #2EC4C4;
 }
 
 .prose a {
-  color: #adc6ff;
+  color: #B076E8;
   text-decoration: underline;
-  text-decoration-color: rgba(173, 198, 255, 0.3);
+  text-decoration-color: rgba(176, 118, 232, 0.3);
   text-underline-offset: 3px;
   transition: text-decoration-color 0.2s;
 }
 
 .prose a:hover {
-  text-decoration-color: #adc6ff;
+  text-decoration-color: #B076E8;
 }
 
 .prose ul,
@@ -207,30 +207,30 @@
 }
 
 .prose blockquote {
-  border-inline-start: 2px solid rgba(173, 198, 255, 0.2);
+  border-inline-start: 2px solid rgba(46, 196, 196, 0.4);
   padding-inline-start: 1.25em;
-  color: #9A9796;
+  color: #948f98;
   font-style: italic;
   margin: 2em 0;
 }
 
 .prose hr {
   border: none;
-  border-top: 1px solid rgba(66, 71, 84, 0.2);
+  border-top: 1px solid rgba(73, 69, 77, 0.2);
   margin: 2.5em 0;
 }
 
 .prose code {
-  font-family: "Inter", monospace;
+  font-family: "Geist", monospace;
   font-size: 0.875em;
-  background-color: #2A2A2A;
-  color: #E9C176;
+  background-color: #2a2a2c;
+  color: #2EC4C4;
   padding: 0.15em 0.4em;
   border-radius: 0.25rem;
 }
 
 .prose pre {
-  background-color: #1C1B1B;
+  background-color: #1b1b1d;
   border-radius: 0.5rem;
   padding: 1.25em 1.5em;
   overflow-x: auto;
@@ -240,6 +240,6 @@
 .prose pre code {
   background: none;
   padding: 0;
-  color: #E5E2E1;
+  color: #e5e1e4;
   font-size: 0.875rem;
 }

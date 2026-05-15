@@ -58,13 +58,13 @@ export default function StarMap({ stars, lang = "en" }: Props) {
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(66,71,84,0.07) 1px, transparent 1px)," +
-            "linear-gradient(90deg, rgba(66,71,84,0.07) 1px, transparent 1px)",
+            "linear-gradient(rgba(73,69,77,0.07) 1px, transparent 1px)," +
+            "linear-gradient(90deg, rgba(73,69,77,0.07) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
 
-      {/* Ambient glow cluster */}
+      {/* Ambient glow cluster — lavender */}
       <div
         className="absolute pointer-events-none"
         style={{
@@ -74,7 +74,21 @@ export default function StarMap({ stars, lang = "en" }: Props) {
           height: "280px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(173,198,255,0.04) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(176,118,232,0.05) 0%, transparent 70%)",
+          transform: "translate(-50%, -50%)",
+        }}
+      />
+      {/* Ambient glow cluster — teal */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: "65%",
+          left: "65%",
+          width: "220px",
+          height: "220px",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(46,196,196,0.05) 0%, transparent 70%)",
           transform: "translate(-50%, -50%)",
         }}
       />
@@ -98,7 +112,7 @@ export default function StarMap({ stars, lang = "en" }: Props) {
               y1={A.y}
               x2={B.x}
               y2={B.y}
-              stroke="rgba(173,198,255,0.14)"
+              stroke="rgba(46,196,196,0.18)"
               strokeWidth="0.25"
               strokeDasharray="1 2"
             />
@@ -119,26 +133,22 @@ export default function StarMap({ stars, lang = "en" }: Props) {
               onMouseLeave={() => setHovered(null)}
               onClick={() => (window.location.href = star.href)}
             >
-              {/* Outer halo — only visible on hover */}
+              {/* Outer halo */}
               <circle
                 r={isHot ? 7 : 4.5}
-                fill={isHot ? "rgba(233,193,118,0.07)" : "rgba(173,198,255,0.05)"}
+                fill={isHot ? "rgba(229,225,228,0.10)" : "rgba(229,225,228,0.04)"}
                 style={{ transition: "r 0.35s ease, fill 0.25s ease" }}
               />
               {/* Mid glow */}
               <circle
                 r={isHot ? 3.5 : 2.2}
-                fill={
-                  isHot
-                    ? "rgba(233,193,118,0.18)"
-                    : "rgba(173,198,255,0.10)"
-                }
+                fill={isHot ? "rgba(229,225,228,0.20)" : "rgba(229,225,228,0.08)"}
                 style={{ transition: "r 0.25s ease, fill 0.25s ease" }}
               />
               {/* Core dot */}
               <circle
                 r={isHot ? 1.8 : 1.1}
-                fill={isHot ? "#E9C176" : "#adc6ff"}
+                fill={isHot ? "#e5e1e4" : "#d1cac3"}
                 className="star-core"
                 style={{
                   transition: "r 0.2s ease, fill 0.2s ease",
@@ -181,17 +191,17 @@ export default function StarMap({ stars, lang = "en" }: Props) {
                 padding: "11px 15px",
                 minWidth: "170px",
                 maxWidth: "230px",
-                outline: "1px solid rgba(66,71,84,0.22)",
+                outline: "1px solid rgba(73,69,77,0.22)",
               }}
             >
               <p
                 style={{
                   fontFamily: isRTL
                     ? '"Segoe UI", Tahoma, Arial, sans-serif'
-                    : '"Space Grotesk", sans-serif',
+                    : '"Geist", sans-serif',
                   fontSize: "0.9rem",
                   fontWeight: 600,
-                  color: "#E9C176",
+                  color: "#d1cac3",
                   letterSpacing: isRTL ? "0" : "-0.01em",
                   margin: 0,
                   lineHeight: 1.3,
@@ -208,7 +218,7 @@ export default function StarMap({ stars, lang = "en" }: Props) {
                       ? '"Segoe UI", Tahoma, Arial, sans-serif'
                       : '"Newsreader", serif',
                     fontSize: "0.8125rem",
-                    color: "#9A9796",
+                    color: "#948f98",
                     marginTop: "5px",
                     lineHeight: 1.55,
                     marginBottom: 0,
@@ -221,9 +231,9 @@ export default function StarMap({ stars, lang = "en" }: Props) {
               )}
               <p
                 style={{
-                  fontFamily: '"Inter", sans-serif',
+                  fontFamily: '"Geist", sans-serif',
                   fontSize: "0.68rem",
-                  color: "rgba(173,198,255,0.55)",
+                  color: "rgba(46,196,196,0.7)",
                   marginTop: "8px",
                   letterSpacing: isRTL ? "0" : "0.06em",
                   textTransform: "uppercase",
@@ -242,7 +252,7 @@ export default function StarMap({ stars, lang = "en" }: Props) {
       <div
         className="absolute bottom-3 right-4 pointer-events-none"
         style={{
-          fontFamily: '"Inter", sans-serif',
+          fontFamily: '"Geist", sans-serif',
           fontSize: "0.65rem",
           color: "rgba(154,151,150,0.4)",
           letterSpacing: "0.1em",

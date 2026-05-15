@@ -1,104 +1,161 @@
-# Design System Specification: Wing Meet Star
+# Design System Specification: Wing Meets Star
 
 ## 1. Overview & Creative North Star
 
-### The Creative North Star: "The Celestial Laboratory"
-This design system is not a standard SaaS template; it is a high-precision digital environment that bridges the gap between aerospace engineering and editorial prestige. We call this aesthetic "The Celestial Laboratory." It focuses on the juxtaposition of technical rigidity (the "Star") and organic, flowing intelligence (the "Wing").
+### The Aesthetic: "Cosmic Elegance"
+This design system bridges high-precision aerospace engineering and ethereal luxury. The interface should feel like a custom-tooled instrument viewed through a high-end observatory lens — precise, deep, and quiet. It is designed for an audience that values technical mastery, exploration, and refined craftsmanship.
 
-To break the "template" look, we utilize **Intentional Asymmetry**. Hero layouts should favor a 60/40 split, and typography should leverage dramatic scale shifts—pairing massive technical headlines with delicate, high-contrast serif body copy. The interface should feel like a custom-tooled instrument: precise, deep, and quiet.
+The visual style blends **Minimalism** with subtle **Glassmorphism**. Deep, expansive dark backgrounds are contrasted with razor-sharp thin-line geometry and atmospheric blurs. The overall emotional response should be one of quiet authority, intellectual curiosity, and timeless precision.
+
+To break the "template" look, use **Intentional Asymmetry**: hero layouts favor a 60/40 split, and typography leverages dramatic scale shifts — pairing massive technical headlines with delicate, high-contrast serif body copy.
 
 ---
 
 ## 2. Colors
 
-The palette is rooted in the "Deep Space" base, using tonal shifts to define boundaries rather than structural lines.
+### Brand Palette
 
-### Palette Strategy
-- **Primary (`#adc6ff`):** Used for interactive technical elements.
-- **Secondary (`#b9c8de`):** Used for utility icons and secondary actions.
-- **Tertiary (`#E9C176`):** Our "Starlight Gold." Reserved for high-importance highlights, success states, or brand-specific editorial callouts.
-- **Surface (`#131313`):** The canvas of the void.
+| Token | Value | Role |
+| :--- | :--- | :--- |
+| `primary` | `#B076E8` | Lavender — primary actions, active states, links, highlights |
+| `secondary` | `#2EC4C4` | Teal — tags, borders, technical indicators, secondary actions |
+| `tertiary` | `#d1cac3` | Cream — star elements, inline code, warm focal points |
+| `primary-container` | `#7040b8` | Deeper lavender — gradient endpoints, pressed states |
+| `on-surface` | `#e5e1e4` | Primary text |
+| `on-surface-muted` | `#948f98` | Secondary text, captions |
 
-### The "No-Line" Rule
-Standard 1px solid borders for sectioning are strictly prohibited. Sectional boundaries must be defined solely through background color shifts. For instance, a main content area using `surface` might transition into a footer using `surface_container_lowest`. 
+### Surface Hierarchy
 
-### Surface Hierarchy & Nesting
-Treat the UI as a series of physical layers. Use the following hierarchy to create "nested" depth:
-1. **Base:** `surface` (#131313)
-2. **Low-Priority Containers:** `surface_container_low` (#1C1B1B)
-3. **Primary Cards/Modules:** `surface_container_high` (#2A2A2A)
-4. **Active/Floating Elements:** `surface_container_highest` (#353534)
+| Token | Value | Use |
+| :--- | :--- | :--- |
+| `surface` | `#131315` | Base canvas |
+| `surface-low` | `#1b1b1d` | Low-priority containers, pre backgrounds |
+| `surface-high` | `#2a2a2c` | Cards, code backgrounds |
+| `surface-highest` | `#353437` | Active/floating elements, scrollbar thumb |
+| `outline-variant` | `#49454d` | Ghost borders, grid lines |
 
-### The "Glass & Gradient" Rule
-To add "soul," use **Glassmorphism** for floating overlays. Apply `surface_variant` at 60% opacity with a `24px` backdrop-blur. For primary CTAs, do not use flat fills; use a subtle linear gradient from `primary` (#adc6ff) to `primary_container` (#4D8EFF) at a 135-degree angle.
+### Rules
+- **No 100% white.** Always use `on-surface` (`#e5e1e4`) for text.
+- **No hard dividers.** Separate sections through tonal background shifts or spacing, not `<hr>` lines.
+- **Primary CTAs** use a 135° linear gradient from `primary` → `primary-container`.
+- **Secondary CTAs** use a transparent background with a 1px teal border and teal text.
+- **Ghost borders** (when required for accessibility): `outline-variant` at 15% opacity.
 
 ---
 
 ## 3. Typography
 
-The system uses a "Technical/Humanist" dichotomy to convey both precision and wisdom.
+### Fonts
 
-- **Display & Headlines (Space Grotesk):** This is our "Instrument" font. It must be tracked tightly (-2%) for headlines to feel like machined parts. 
-- **Body & Titles (Newsreader):** This is our "Editorial" font. It provides a human, literary contrast to the tech-heavy surroundings. Use it for storytelling and long-form insights.
-- **Labels (Inter):** Reserved for data points, micro-copy, and UI controls where legibility is paramount.
+| Role | Font | Notes |
+| :--- | :--- | :--- |
+| Display & Headlines | **Newsreader** | Literary, authoritative serif. Sharp serifs mirror the star's precise points. |
+| Body, Labels, UI | **Geist** | Technical, monospaced-influenced sans. Provides "flight-instrument" clarity. |
+| Code | **Geist** (monospace) | Consistent with label font. Inline code uses `tertiary` (`#d1cac3`) color... wait, teal `#2EC4C4`. |
 
-| Level | Token | Font | Size | Intent |
-| :--- | :--- | :--- | :--- | :--- |
-| **Display** | `display-lg` | Space Grotesk | 3.5rem | Hero moments; technical impact. |
-| **Headline** | `headline-md` | Space Grotesk | 1.75rem | Section headers. |
-| **Title** | `title-lg` | Newsreader | 1.375rem | Article intros; pull quotes. |
-| **Body** | `body-lg` | Newsreader | 1.0rem | Primary reading experience. |
-| **Label** | `label-md` | Inter | 0.75rem | Buttons, tags, and data labels. |
+### Type Scale
+
+| Level | Font | Size | Weight | Tracking | Intent |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `headline-xl` | Newsreader | 4rem+ | 600 | -0.02em | Hero moments |
+| `headline-lg` | Newsreader | 3rem | 600 | -0.02em | Page titles |
+| `headline-md` | Newsreader | 1.75rem | 500 | -0.01em | Section headers |
+| `body-lg` | Newsreader | 1.125rem | 400 | normal | Primary reading |
+| `label-md` | Geist | 0.875rem | 500 | 0.05em | Buttons, overlines |
+| `label-sm` | Geist | 0.75rem | 600 | 0.1em | Tags, micro-copy |
+| `code` | Geist | 0.875em | 400 | normal | Inline code |
+
+### Rules
+- Mix typography within a single block — Geist label above a Newsreader headline is intentional.
+- Use wide letter-spacing (0.05–0.12em) for uppercase labels to reinforce the technical, schematized feel.
+- Tight tracking (-0.02em) on display headlines makes them feel machined.
 
 ---
 
 ## 4. Elevation & Depth
 
-We eschew traditional drop shadows in favor of **Tonal Layering** and **Ambient Glows**.
+Depth is achieved through **Tonal Layering** and **Ambient Glows** — not drop shadows.
 
-### The Layering Principle
-Depth is achieved by stacking surface tiers. A `surface_container_highest` card sitting on a `surface` background provides enough contrast to imply elevation without a single pixel of shadow.
+### Layering Principle
+Stack surface tiers. A `surface-high` card on a `surface` background provides enough contrast to imply elevation without any shadow.
 
-### Ambient Shadows
-When a component must "float" (e.g., a dropdown), use an extra-diffused shadow:
-- **X/Y:** 0, 12px
-- **Blur:** 40px
-- **Color:** `on_surface` (#E5E2E1) at 4% opacity. 
-This mimics the way light catches cosmic dust rather than a harsh terrestrial shadow.
+### Ambient Glows
+When a component must "float", use:
+- **Shadow:** `0 8px 40px rgba(46,196,196,0.05), 0 2px 16px rgba(176,118,232,0.08)` (teal + lavender)
+- Applied on hover via the `.card-glow` utility class.
 
-### The "Ghost Border" Fallback
-If a border is required for accessibility, use a **Ghost Border**: `outline_variant` (#424754) at 15% opacity. This provides a "suggestion" of a boundary that disappears into the dark background.
+### Glassmorphism
+For floating overlays (tooltips, modals, nav):
+- Background: `rgba(28,27,29,0.90)`
+- Backdrop blur: `24px`
+- Border: 1px `outline-variant` at 22% opacity
+
+### Background Glows
+Hero sections use two radial ambient glows:
+- Lavender: `rgba(176,118,232,0.05)` — upper-left cluster
+- Teal: `rgba(46,196,196,0.05)` — lower-right cluster
 
 ---
 
 ## 5. Components
 
 ### Buttons
-- **Primary:** Gradient fill (`primary` to `primary_container`). Radius: `DEFAULT` (0.25rem). Label: `label-md` (Inter, All-Caps, 0.05em tracking).
-- **Secondary:** Ghost Border style. Background: `surface_container_high`.
-- **Tertiary:** Text-only in `tertiary` (#E9C176) with a subtle underline of 1px at 50% opacity.
+- **Primary:** Gradient fill `linear-gradient(135deg, #B076E8, #7040b8)`. Radius: `0.25rem`. Label: Geist, all-caps, 0.05em tracking, dark text.
+- **Secondary:** Transparent background, `1px solid rgba(46,196,196,0.5)`, teal text. Radius: `0.25rem`.
+- **Hover:** Subtle outer glow using the respective brand color.
 
 ### Cards
-Cards must never have visible borders. Separate them from the background using `surface_container_low`. Use `1.5` (0.5rem) spacing between the card edge and internal content. Use Newsreader for card titles to maintain an editorial feel.
+- Background: `surface-low`. Never use visible borders.
+- Hover: `surface-high` + `.card-glow` box-shadow + `translateY(-2px)`.
+- Left border on hover: `2px solid rgba(46,196,196,0.4)` (teal accent line).
+- Titles: Newsreader. Labels/metadata: Geist.
+
+### Tags & Chips
+- Background: `rgba(46,196,196,0.08)`.
+- Text: `#2EC4C4` (100% opacity teal).
+- Border: `1px solid rgba(46,196,196,0.2)`.
+- Radius: `0.25rem`. Font: Geist `label-sm`.
+
+### Prose (Markdown)
+- Body: Newsreader, 1.125rem, 1.85 line-height.
+- Headings (h2/h3): Geist, tight tracking.
+- Links: `#B076E8`, underline at 30% opacity, full opacity on hover.
+- Blockquote: `2px solid rgba(46,196,196,0.4)` left border, muted text.
+- Inline code: Geist, `#2EC4C4` text, `surface-high` background.
+- `em`: Teal `#2EC4C4`.
 
 ### Input Fields
-- **Default:** `surface_container_lowest` background. 
-- **Focus:** 1px "Ghost Border" using `primary`.
-- **Error:** Background shift to `error_container` (#93000A) at 20% opacity.
+- Background: `surface-low`.
+- Focus: 1px ghost border using `primary`.
+- Error: Background shift to `error-container` (`#93000A`) at 20% opacity.
+- Label: Geist `label-sm`, above the field.
 
 ### Technical Grid Overlay
-For hero sections, implement a subtle background pattern: a 24px grid using `outline_variant` at 5% opacity. This reinforces the "Astro-tech" precision.
+Hero sections use a 24px background grid: `outline-variant` at 5% opacity. Reinforces the "astro-tech" precision feel.
 
 ---
 
-## 6. Do's and Don'ts
+## 6. Logo & Brand Mark
+
+**File:** `public/assets/wing-meets-star-logo-removebg.png` (transparent, for UI use)
+**File:** `public/assets/wing-meets-star-logo.png` (with background)
+
+The logo features a 5-pointed star with a feathered wing, enclosed in a double-ring circle. The star uses a lavender-to-teal gradient, and the wing transitions from lavender to teal — directly mirroring the brand's primary and secondary colors.
+
+---
+
+## 7. Do's and Don'ts
 
 ### Do
-- **Do** use `tertiary` (Starlight Gold) sparingly to draw the eye to the single most important action on the page.
-- **Do** leverage whitespace (specifically spacing `12` and `16`) to let the "void" of the space black background breathe.
-- **Do** mix typography within a single block—e.g., a Space Grotesk label above a Newsreader headline.
+- Use `secondary` (teal) for tags, borders, technical indicators, and secondary interactive elements.
+- Use `primary` (lavender) for primary CTAs, active nav states, links, and highlights.
+- Use `tertiary` (cream) for star/celestial decorative elements and warmth accents.
+- Use gradient text (`primary` → `secondary`) for key headline words to echo the logo.
+- Leverage whitespace generously — let the dark void breathe.
+- Mix Newsreader + Geist within a single content block.
 
 ### Don't
-- **Don't** use 100% opaque white (#FFFFFF) for text. Always use `on_surface` (#E5E2E1) to reduce eye strain in dark mode.
-- **Don't** use rounded corners larger than `xl` (0.75rem). The system should feel "machined," not "bubbly."
-- **Don't** use dividers. If two elements need separation, use a `3` (1rem) spacing gap or a tonal shift in the background.
+- Don't use 100% white (`#FFFFFF`) for text. Always use `on-surface` (`#e5e1e4`).
+- Don't use rounded corners larger than `xl` (0.75rem). The system should feel machined, not bubbly.
+- Don't use structural dividers. Use tonal background shifts or spacing gaps instead.
+- Don't use flat fills for primary CTAs — always gradient.
