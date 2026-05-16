@@ -17,7 +17,7 @@ It sounds like everyone is talking about the same thing. They're not.
 
 Your relationship with AI determines which discipline you're in. The word "AI" is used to describe at least three completely different activities — and confusing them is the source of a lot of bad career advice, hype, and frustration.
 
-![The AI Landscape](/ai-article.svg)
+![The 3 Layers of AI](/assets/3-layers-of-AI.svg)
 
 ### Layer 1 — Using AI
 
