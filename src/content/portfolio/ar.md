@@ -24,6 +24,24 @@ experience:
       - "الاستفادة من أدوات الذكاء الاصطناعي لتحسين سير عمل التطوير وتصحيح الأخطاء"
 
 projects:
+  - name: "In-One-Touch"
+    type: "Full-Stack"
+    stack: ["React", "Node.js", "PostgreSQL", "Docker", "Express.js"]
+    description: >-
+      لوحة تحكم IoT متكاملة تضم واجهة أمامية بـ React وواجهة برمجية REST بـ Node.js/Express
+      مدعومة بـ PostgreSQL عبر Prisma ORM. مُحاطة بـ Docker ومنشورة على Railway. تتضمن إعدادات
+      CORS، والتحقق من المدخلات، ونقاط فحص الصحة.
+    repo: "https://github.com/malakh727/in-one-touch"
+    liveUrl: null
+  - name: "TaskFlow"
+    type: "Full-Stack"
+    stack: ["Angular", "ASP.NET Core", "TypeScript", "Entity Framework"]
+    description: >-
+      مدير مهام CRUD متكامل يضم واجهة أمامية بـ Angular 17 standalone وواجهة برمجية
+      ASP.NET Core 8 Web API. يُطبّق controllers بـ REST و DTOs وإعدادات CORS وتخزين دائم
+      بـ Entity Framework Core وSQLite.
+    repo: "https://github.com/malakh727/.net-task-flow"
+    liveUrl: null
   - name: "لوحة تحليلات SEO"
     type: "Full-Stack"
     stack: ["Angular", "Node.js", "MongoDB", "TypeScript", "Express.js"]
@@ -59,13 +77,13 @@ skillGroups:
         "DaisyUI",
       ]
   - label: "الخلفية"
-    skills: ["Node.js", "Express.js", "Strapi", "Frontmatter CMS", "Deno"]
+    skills: ["Node.js", "Express.js", "ASP.NET Core", "PostgreSQL", "Strapi", "Frontmatter CMS", "Deno"]
   - label: "الاختبارات"
     skills: ["Karma", "Spectator", "Cypress", "Playwright"]
   - label: "السيو والتحليلات"
     skills: ["Technical SEO", "Google Search Console", "Google Analytics 4"]
   - label: "الأدوات"
-    skills: ["Git", "Monorepo", "Linux", "Figma"]
+    skills: ["Git", "Docker", "Monorepo", "Linux", "Figma"]
   - label: "المفاهيم"
     skills: ["هياكل البيانات والخوارزميات", "تحسين الأداء", "REST APIs"]
   - label: "برمجة أساسية"

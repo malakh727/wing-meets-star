@@ -24,6 +24,24 @@ experience:
       - "Leveraged AI tools to enhance debugging and development workflows"
 
 projects:
+  - name: "In-One-Touch"
+    type: "Full-Stack"
+    stack: ["React", "Node.js", "PostgreSQL", "Docker", "Express.js"]
+    description: >-
+      A full-stack IoT dashboard with a React frontend and a Node.js/Express REST API backed by
+      PostgreSQL via Prisma ORM. Containerised with Docker and deployed to Railway. Includes CORS
+      configuration, input validation, and healthcheck endpoints.
+    repo: "https://github.com/malakh727/in-one-touch"
+    liveUrl: null
+  - name: "TaskFlow"
+    type: "Full-Stack"
+    stack: ["Angular", "ASP.NET Core", "TypeScript", "Entity Framework"]
+    description: >-
+      A full-stack CRUD task manager with an Angular 17 standalone frontend and an ASP.NET Core 8
+      Web API. Implements RESTful controllers, DTOs, CORS configuration, and persistent storage
+      with Entity Framework Core and SQLite.
+    repo: "https://github.com/malakh727/.net-task-flow"
+    liveUrl: null
   - name: "SEO Analytics Dashboard"
     type: "Full-Stack"
     stack: ["Angular", "Node.js", "MongoDB", "TypeScript", "Express.js"]
@@ -59,13 +77,13 @@ skillGroups:
         "DaisyUI",
       ]
   - label: "Backend"
-    skills: ["Node.js", "Express.js", "Strapi", "Frontmatter CMS", "Deno"]
+    skills: ["Node.js", "Express.js", "ASP.NET Core", "PostgreSQL", "Strapi", "Frontmatter CMS", "Deno"]
   - label: "Testing"
     skills: ["Karma", "Spectator", "Cypress", "Playwright"]
   - label: "SEO & Analytics"
     skills: ["Technical SEO", "Google Search Console", "Google Analytics 4"]
   - label: "Tools"
-    skills: ["Git", "Monorepo", "Linux", "Figma"]
+    skills: ["Git", "Docker", "Monorepo", "Linux", "Figma"]
   - label: "Concepts"
     skills:
       ["Data Structures & Algorithms", "Performance Optimisation", "REST APIs"]
