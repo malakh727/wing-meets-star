@@ -5,10 +5,11 @@ interface Props {
   title: string;
   description?: string;
   date?: string;
+  tags?: string[];
   lang?: "en" | "ar";
 }
 
-const { title, description, date, lang = "en" } = Astro.props;
+const { title, description, date, tags, lang = "en" } = Astro.props;
 
 const formattedDate = date
   ? new Date(date).toLocaleDateString(lang === "ar" ? "ar-SA" : "en-US", {
@@ -40,6 +41,21 @@ const formattedDate = date
           <p class="font-body text-xl text-on-surface-muted mt-5 leading-relaxed">
             {description}
           </p>
+        )
+      }
+      {
+        tags && tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-6">
+            {tags.map((tag) => (
+              <a
+                href={`${lang === "ar" ? "/ar" : ""}/blog?tag=${encodeURIComponent(tag)}`}
+                class="font-label text-xs px-3 py-1 rounded-full transition-colors duration-150"
+                style="background-color: rgba(46,196,196,0.08); color: #2EC4C4; border: 1px solid rgba(46,196,196,0.2);"
+              >
+                {tag}
+              </a>
+            ))}
+          </div>
         )
       }
     </header>
