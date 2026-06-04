@@ -1,11 +1,11 @@
 ---
 title: "ملف الأعمال"
-description: "مهندسة برمجيات متخصصة في تطوير الواجهة الأمامية والسيو التقني."
+description: "مهندسة برمجيات متخصصة في تطوير الواجهات الأمامية (Frontend) والـ SEO التقني (Technical SEO)."
 summary: >-
-  مهندسة برمجيات بخبرة تتجاوز 3.5 سنوات، متخصصة في تطوير الواجهة الأمامية باستخدام Angular
-  والسيو التقني. متمرسة في بناء تطبيقات ويب عالية الأداء ومحورها المستخدم، وتحسين الظهور
-  العضوي من خلال البيانات. لديها أساس متين في الاختبارات والأداء ومعمارية الواجهة القابلة
-  للتوسع، مع اكتساب خبرة متنامية في React وNext.js.
+  مهندسة برمجيات بخبرة مهنية تتجاوز 3.5 سنوات في تطوير الويب، تشمل بناء الواجهات الأمامية والخلفية وتطبيقات الـ Full-Stack. 
+  متمرسة في تطوير واجهات مستخدم عالية الأداء قائمة على المكونات (Component-driven UI) باستخدام Angular وReact وTypeScript. 
+  تمتلك خبرة عملية في تطوير الخدمات الخلفية باستخدام Node.js وExpress.js وASP.NET Core، مع كفاءة عالية في التعامل مع مختلف طبقات التطبيق — 
+  بدءاً من تصميم وبناء الـ REST APIs ودمج قواعد البيانات (العلائقية وغير العلائقية)، وصولاً إلى تحسين الأداء، كتابة الاختبارات (Testing)، وتطبيق مبادئ المعمارية النظيفة (Clean Architecture).
 
 experience:
   - role: "مهندسة برمجيات"
@@ -13,52 +13,50 @@ experience:
     location: "الإمارات، دبي — عن بُعد"
     period: "Sep 2022 – Present"
     bullets:
-      - "تطوير وصيانة تطبيقات ويب على مستوى الإنتاج باستخدام Angular و Astro"
-      - "قيادة تحسينات السيو التقني (العلامات الوصفية، البيانات المنظمة، تحسين الكلمات المفتاحية)، مما أسهم في تصدّر الصفحات المستهدفة لنتائج البحث"
-      - "بناء وتحسين الصفحات وتحسين الأداء وكفاءة التحميل بنسبة ~10–20%"
-      - "العمل مع منصات CMS مثل Strapi و Frontmatter لإدارة المحتوى الديناميكي"
-      - "استخدام Google Search Console و GA4 لتحليل الأداء وتوجيه التحسينات"
-      - "التعاون مع فرق الباكند والتصميم والسيو لتسليم المميزات بكفاءة"
-      - "المساهمة في الاختبارات باستخدام Karma و Spectator و Cypress و Playwright"
-      - "العمل ضمن بيئة monorepo وإدارة المستودعات باستخدام Bitbucket و Git submodules"
-      - "الاستفادة من أدوات الذكاء الاصطناعي لتحسين سير عمل التطوير وتصحيح الأخطاء"
+      - "تطوير وصيانة تطبيقات ويب متكاملة (Production-ready) باستخدام Angular و Astro"
+      - "قيادة استراتيجيات SEO التقني (Technical SEO) بما يشمل الـ Meta Tags، البيانات المنظمة (Structured Data)، وتحسين الكلمات المفتاحية، مما ساهم في تصدر الصفحات المستهدفة لنتائج البحث الأولى"
+      - "تحسين أداء الصفحات وكفاءة سرعة التحميل بنسبة تتراوح بين 10% إلى 20%"
+      - "إدارة المحتوى الديناميكي وربطه باستخدام منصات الـ CMS مثل Strapi و Frontmatter"
+      - "تحليل الأداء الرقمي وتوجيه التحسينات التقنية بناءً على بيانات Google Search Console و GA4"
+      - "التعاون المشترك مع فرق تطوير الخلفية (Backend)، التصميم، والـ SEO لتسليم الميزات البرمجية بكفاءة عالية"
+      - "المساهمة في أتمتة وكتابة الاختبارات باستخدام Karma و Spectator و Cypress و Playwright"
+      - "إدارة مستودعات الكود البرمجي ضمن بيئة الـ Monorepo باستخدام Bitbucket و Git submodules"
+      - "توظيف أدوات الذكاء الاصطناعي (AI tools) لتسريع سير عمل التطوير وتصحيح الأخطاء (Debugging)"
 
 projects:
-  - name: "In-One-Touch"
-    type: "Full-Stack"
-    stack: ["React", "Node.js", "PostgreSQL", "Docker", "Express.js"]
-    description: >-
-      لوحة تحكم IoT متكاملة تضم واجهة أمامية بـ React وواجهة برمجية REST بـ Node.js/Express
-      مدعومة بـ PostgreSQL عبر Prisma ORM. مُحاطة بـ Docker ومنشورة على Railway. تتضمن إعدادات
-      CORS، والتحقق من المدخلات، ونقاط فحص الصحة.
-    repo: "https://github.com/malakh727/in-one-touch"
-    liveUrl: null
-  - name: "TaskFlow"
-    type: "Full-Stack"
-    stack: ["Angular", "ASP.NET Core", "TypeScript", "Entity Framework"]
-    description: >-
-      مدير مهام CRUD متكامل يضم واجهة أمامية بـ Angular 17 standalone وواجهة برمجية
-      ASP.NET Core 8 Web API. يُطبّق controllers بـ REST و DTOs وإعدادات CORS وتخزين دائم
-      بـ Entity Framework Core وSQLite.
-    repo: "https://github.com/malakh727/.net-task-flow"
-    liveUrl: null
   - name: "لوحة تحليلات SEO"
     type: "Full-Stack"
     stack: ["Angular", "Node.js", "MongoDB", "TypeScript", "Express.js"]
     description: >-
-      أداة تحليل سيو تستخرج العناصر الأساسية في الصفحة (العلامات الوصفية، العناوين، Open Graph،
-      الصور) من أي رابط وتُقيّمها من 0 إلى 100. تتضمن سجل تحليل، مخططات اتجاهات،
-      تتبع التغييرات في النتائج، وتصدير JSON.
+      أداة متكاملة لتحليل الـ SEO، تقوم باستخراج العناصر الأساسية لصفحات الويب (Meta Tags، العناوين، Open Graph، والصور) لأي رابط وتقييمها برقم من 0 إلى 100. 
+      يتضمن التطبيق سجلًا للتحليلات السابقة، مخططات بيانية للمقارنة، تتبع التغييرات في النتائج، وميزة تصدير البيانات بصيغة JSON.
     repo: "https://github.com/malakh727/seo-dashboard"
     liveUrl: null
   - name: "متتبع القراءة"
     type: "Frontend"
     stack: ["Next.js", "React", "Zustand", "TypeScript", "Tailwind"]
     description: >-
-      تطبيق لتتبع قراءة الكتب والمقالات وغيرها. يدعم الرفوف الشخصية (أريد القراءة / أقرأ الآن / انتهيت)،
-      التقييم بالنجوم، تتبع التقدم، والبحث عن الكتب عبر Open Library API.
-      يعمل بالكامل على جهة العميل.
+      تطبيق متكامل (Client-side) لتتبع قراءة الكتب والمقالات وغيرها. يدعم تصنيف الكتب في رفوف شخصية (أريد القراءة / أقرأ الآن / تم الانتهاء)، 
+      التقييم بنظام النجوم، تتبع تقدم القراءة، والبحث الفوري عن الكتب عبر Open Library API.
     repo: "https://github.com/malakh727/reading-tracker"
+    liveUrl: null
+  - name: "In-One-Touch"
+    type: "Full-Stack"
+    stack: ["React", "Node.js", "PostgreSQL", "Docker", "Express.js"]
+    description: >-
+      لوحة تحكم IoT متكاملة تعتمد على واجهة أمامية بـ React وواجهة برمجية REST API بـ Node.js/Express، 
+      مدعومة بقاعدة بيانات PostgreSQL عبر Prisma ORM. التطبيق مغلّف بالكامل باستخدام Docker ومنشور على منصة Railway، 
+      ويشمل إعدادات الـ CORS، التحقق من المدخلات (Validation)، ونقاط فحص سلامة النظام (Health checks).
+    repo: "https://github.com/malakh727/in-one-touch"
+    liveUrl: null
+  - name: "TaskFlow"
+    type: "Full-Stack"
+    stack: ["Angular", "ASP.NET Core", "TypeScript", "Entity Framework"]
+    description: >-
+      نظام CRUD متكامل لإدارة المهام، يعتمد على واجهة أمامية باستخدام Angular 17 (Standalone Components) 
+      وخلفية برمجية ASP.NET Core 8 Web API. يطبق النظام الـ Controllers، ومطابقة البيانات عبر DTOs، 
+      مع إعدادات CORS وتخزين دائم للبيانات باستخدام Entity Framework Core و SQLite.
+    repo: "https://github.com/malakh727/.net-task-flow"
     liveUrl: null
 
 skillGroups:
@@ -76,19 +74,33 @@ skillGroups:
         "Tailwind",
         "DaisyUI",
       ]
-  - label: "الخلفية"
-    skills: ["Node.js", "Express.js", "ASP.NET Core", "PostgreSQL", "Strapi", "Frontmatter CMS", "Deno"]
-  - label: "الاختبارات"
+  - label: "الخدمات الخلفية وقواعد البيانات"
+    skills:
+      [
+        "Node.js",
+        "Express.js",
+        "ASP.NET Core",
+        "PostgreSQL",
+        "Strapi",
+        "Frontmatter CMS",
+        "Deno",
+      ]
+  - label: "جودة البرمجيات والاختبار"
     skills: ["Karma", "Spectator", "Cypress", "Playwright"]
-  - label: "السيو والتحليلات"
+  - label: "الـ SEO والتحليلات الرقمية"
     skills: ["Technical SEO", "Google Search Console", "Google Analytics 4"]
-  - label: "الأدوات"
+  - label: "الأدوات وأنظمة التشغيل"
     skills: ["Git", "Docker", "Monorepo", "Linux", "Figma"]
-  - label: "المفاهيم"
-    skills: ["هياكل البيانات والخوارزميات", "تحسين الأداء", "REST APIs"]
-  - label: "برمجة أساسية"
+  - label: "المفاهيم البرمجية"
+    skills:
+      [
+        "هياكل البيانات والخوارزميات (DSA)",
+        "تحسين الأداء (Performance Optimization)",
+        "REST APIs",
+      ]
+  - label: "لغات البرمجة الأساسية"
     skills: ["Python", "C++"]
-  - label: "السحابة"
+  - label: "الخدمات السحابية"
     skills: ["AWS Amplify", "Route 53"]
 
 education:
@@ -102,12 +114,12 @@ education:
     note: "المعدل التراكمي: 3.71 / 4.00"
 
 activities:
-  - text: "قيادة جلسات تعليمية في HTML وCSS وJavaScript والمساهمة في مبادرات المحتوى التقني في IEEE BAU CS"
-  - text: "شاركت في تأليف ورقة بحثية في علم الفلك نُشرت في مجلة Molecular Physics (2025)."
+  - text: "قيادة ورش عمل وجلسات تعليمية في HTML و CSS و JavaScript، والمساهمة في إثراء المحتوى التقني لمجتمع IEEE BAU CS"
+  - text: "مشاركة في تأليف ورقة بحثية في علم الفلك نُشرت في مجلة Molecular Physics العالمية (2025)."
     links:
       - label: "الورقة البحثية ↗"
         href: "https://www.tandfonline.com/doi/full/10.1080/00268976.2025.2550568"
-  - text: "إرشاد متدرب في مشروع ترجمة ببيئة العمل، وتقديم التوجيه ومراجعة المخرجات"
+  - text: "إرشاد وتوجيه المتدربين في بيئة العمل، وتقديم الدعم ومراجعة المخرجات البرمجية (Code Review)"
 
 contact:
   - label: "GitHub"

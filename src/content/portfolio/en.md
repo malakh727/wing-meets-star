@@ -1,11 +1,13 @@
 ---
 title: "Portfolio"
-description: "Software Engineer specialising in frontend development and technical SEO."
+description: "Software Engineer specialising in Web Development"
 summary: >-
-  Software Engineer with 3.5+ years of experience specialising in frontend development with Angular
-  and technical SEO. Experienced in building high-performance, user-focused web applications and
-  improving organic visibility through data-driven optimisation. Strong foundation in testing,
-  performance, and scalable frontend architecture, with growing exposure to React and Next.js.
+  Software Engineer with 3.5+ years of professional experience across frontend, backend, and
+  full-stack web development. Proficient in Angular, React, and TypeScript on the frontend, with
+  hands-on backend experience using Node.js, Express.js, and ASP.NET Core. Comfortable working
+  across the stack — from building performant, component-driven UIs to designing REST APIs and
+  integrating relational and NoSQL databases. Strong foundation in testing, performance
+  optimisation, and clean architecture.
 
 experience:
   - role: "Software Engineer"
@@ -24,24 +26,6 @@ experience:
       - "Leveraged AI tools to enhance debugging and development workflows"
 
 projects:
-  - name: "In-One-Touch"
-    type: "Full-Stack"
-    stack: ["React", "Node.js", "PostgreSQL", "Docker", "Express.js"]
-    description: >-
-      A full-stack IoT dashboard with a React frontend and a Node.js/Express REST API backed by
-      PostgreSQL via Prisma ORM. Containerised with Docker and deployed to Railway. Includes CORS
-      configuration, input validation, and healthcheck endpoints.
-    repo: "https://github.com/malakh727/in-one-touch"
-    liveUrl: null
-  - name: "TaskFlow"
-    type: "Full-Stack"
-    stack: ["Angular", "ASP.NET Core", "TypeScript", "Entity Framework"]
-    description: >-
-      A full-stack CRUD task manager with an Angular 17 standalone frontend and an ASP.NET Core 8
-      Web API. Implements RESTful controllers, DTOs, CORS configuration, and persistent storage
-      with Entity Framework Core and SQLite.
-    repo: "https://github.com/malakh727/.net-task-flow"
-    liveUrl: null
   - name: "SEO Analytics Dashboard"
     type: "Full-Stack"
     stack: ["Angular", "Node.js", "MongoDB", "TypeScript", "Express.js"]
@@ -60,6 +44,24 @@ projects:
       and book lookup via the Open Library API. Fully client-side with localStorage persistence.
     repo: "https://github.com/malakh727/reading-tracker"
     liveUrl: null
+  - name: "In-One-Touch"
+    type: "Full-Stack"
+    stack: ["React", "Node.js", "PostgreSQL", "Docker", "Express.js"]
+    description: >-
+      A full-stack IoT dashboard with a React frontend and a Node.js/Express REST API backed by
+      PostgreSQL via Prisma ORM. Containerised with Docker and deployed to Railway. Includes CORS
+      configuration, input validation, and healthcheck endpoints.
+    repo: "https://github.com/malakh727/in-one-touch"
+    liveUrl: null
+  - name: "TaskFlow"
+    type: "Full-Stack"
+    stack: ["Angular", "ASP.NET Core", "TypeScript", "Entity Framework"]
+    description: >-
+      A full-stack CRUD task manager with an Angular 17 standalone frontend and an ASP.NET Core 8
+      Web API. Implements RESTful controllers, DTOs, CORS configuration, and persistent storage
+      with Entity Framework Core and SQLite.
+    repo: "https://github.com/malakh727/.net-task-flow"
+    liveUrl: null
 
 skillGroups:
   - label: "Frontend"
@@ -77,7 +79,16 @@ skillGroups:
         "DaisyUI",
       ]
   - label: "Backend"
-    skills: ["Node.js", "Express.js", "ASP.NET Core", "PostgreSQL", "Strapi", "Frontmatter CMS", "Deno"]
+    skills:
+      [
+        "Node.js",
+        "Express.js",
+        "ASP.NET Core",
+        "PostgreSQL",
+        "Strapi",
+        "Frontmatter CMS",
+        "Deno",
+      ]
   - label: "Testing"
     skills: ["Karma", "Spectator", "Cypress", "Playwright"]
   - label: "SEO & Analytics"
